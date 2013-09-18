@@ -19,8 +19,6 @@ development:
   encoding: unicode
   database: ask_deebs_development
   pool: 5
-  username: ask_deebs
-  password:
 
   # Connect on a TCP socket. Omitted by default since the client uses a
   # domain socket that doesn't need configuration. Windows does not have
@@ -48,13 +46,10 @@ test:
   encoding: unicode
   database: ask_deebs_test
   pool: 5
-  username: ask_deebs
-  password:
+
 
 production:
   adapter: postgresql
   encoding: unicode
   database: ask_deebs_production
   pool: 5
-  username: ask_deebs
-  password:
