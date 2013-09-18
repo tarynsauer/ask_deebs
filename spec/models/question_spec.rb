@@ -12,4 +12,13 @@ describe Question do
   it "should have attribute content" do
     expect(@question.content).to eq("What is the best Ruby tutorial?")
   end
+
+  it "should respond to answers" do
+    @question.should respond_to(:answers)
+  end
+
+  it "should respond to tags" do
+    @question.should respond_to(:tags)
+  end
+
 end
