@@ -12,4 +12,8 @@ describe Tag do
   it "should have content" do
     expect(@tag.name).to eq("Ruby")
   end
+
+  it "should respond to questions" do
+    @tag.should respond_to(:questions)
+  end
 end
