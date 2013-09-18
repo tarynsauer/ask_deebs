@@ -13,4 +13,11 @@ describe Answer do
     expect(@answer.content).to eq("Rubymonk")
   end
 
+  it "should respond to votes" do
+    @answer.should respond_to(:votes)
+  end
+
+  it "should respond to question" do
+    @answer.should respond_to(:question)
+  end
 end
