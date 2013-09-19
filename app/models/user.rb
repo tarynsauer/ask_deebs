@@ -9,5 +9,4 @@ class User < ActiveRecord::Base
   has_many :questions_followed
   has_many :followed_questions, :through => :questions_followed, :source => :questions
 
-
 end

@@ -9,10 +9,7 @@ class SessionsController < ApplicationController
     user_data = get_user(token)
     user_attributes = JSON.parse(user_data.body)
     session[:user_attributes] = user_attributes
-    p "======================"
     session[:oauth_token] = token_as_hash(token)
-
-    p session[:oauth_token]
 
     @user = User.find_by(:oauth_token => session[:oauth_token][:token])
     if !@user
