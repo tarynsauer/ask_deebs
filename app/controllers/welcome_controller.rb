@@ -1,9 +1,6 @@
 class WelcomeController < ApplicationController
 
   def index
-    # p params
-    # p session
-    # @auth = authenticated?
-    # p "here is auth: #{@auth}"
+    @questions = Question.all
   end
 end

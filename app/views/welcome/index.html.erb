@@ -1,3 +1,8 @@
-<h1>Hello world</h1>
+<h1>Ask Deebz</h1>
 
-<%= p session %>
+<h2>Questions</h2>
+<ul>
+  <% @questions.each do |question| %>
+    <li> <%= link_to question.content, question %></li>      
+  <% end %>
+</ul>
