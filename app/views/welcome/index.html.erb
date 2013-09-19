@@ -1,3 +1,6 @@
 <h1>Hello world</h1>
 
-<%= p session %>
+<%if @user %>
+  <%= @user.name %>
+  <%= @user.email %>
+  <% end %>
