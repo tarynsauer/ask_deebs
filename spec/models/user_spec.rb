@@ -1,7 +1,8 @@
 require 'spec_helper'
 
 describe User do
-  let(:user) {User.new(:email => "bjohnson@gmail.com", :password => "password")}
+  let(:user) {User.new(:email => "bjohnson@gmail.com", :name => "Bill Johnson", :avatar_url => "this is a url",
+    :oauth_token => "9809834098")}
 
   it "should be valid when new" do
     user.should be_valid
@@ -9,10 +10,6 @@ describe User do
 
   it "should respond to email" do
     user.should respond_to(:email)
-  end
-
-  it "should respond to password" do
-    user.should respond_to(:password)
   end
 
   it "should not have an invalid email address" do
@@ -33,9 +30,5 @@ describe User do
     it "should respond to answers" do
       user.should respond_to(:answers)
     end
-
-
-
   end
-
 end

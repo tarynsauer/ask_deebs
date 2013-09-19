@@ -9,8 +9,17 @@ class SessionsController < ApplicationController
     user_data = get_user(token)
     user_attributes = JSON.parse(user_data.body)
     session[:user_attributes] = user_attributes
-    p session[:oauth_token] = token_as_hash(token)
-    puts "were testing here"
+    session[:oauth_token] = token_as_hash(token)
+
+    @user = User.find_by(:oauth_token => session[:oauth_token][:token])
+    if !@user
+      @user = User.create!(:oauth_token => session[:oauth_token][:token], :email=> session[:user_attributes]['email'],
+      :avatar_url => session[:user_attributes]['avatar_image_url'], :name=> session[:user_attributes]['name'])
+    end
+
+    session.clear
+    session[:user_id] = @user.id
+
     redirect_to root_path
   end
 
@@ -27,11 +36,11 @@ class SessionsController < ApplicationController
   end
 
   def dbc_auth
-    oauth_client.auth_code.authorize_url(redirect_uri: ENV['OAUTH_REDIRECT'])
+    oauth_client.auth_code.authorize_url(redirect_uri: 'http://localhost:3000/auth')
   end
 
   def get_oauth_token(code)
-    oauth_client.auth_code.get_token(code, redirect_uri: ENV['OAUTH_REDIRECT'])
+    oauth_client.auth_code.get_token(code, redirect_uri: 'http://localhost:3000/auth')
   end
 
   def get_user(token)
