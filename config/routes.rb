@@ -3,7 +3,7 @@ AskDeebs::Application.routes.draw do
 
   get 'signup', to: 'users#new'
   get 'signin', to: 'sessions#signin'
-  get 'auth', to: 'sessions#new'
+  get 'auth', to: 'sessions#auth'
   get 'logout', to: 'sessions#logout'
 
   resources :questions do

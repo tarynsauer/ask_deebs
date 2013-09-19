@@ -31,6 +31,13 @@ ActiveRecord::Schema.define(version: 20130919164103) do
     t.datetime "updated_at"
   end
 
+  create_table "question_followeds", force: true do |t|
+    t.integer  "question_id"
+    t.integer  "user_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
   create_table "questions", force: true do |t|
     t.text     "content"
     t.integer  "user_id"
@@ -55,7 +62,9 @@ ActiveRecord::Schema.define(version: 20130919164103) do
 
   create_table "users", force: true do |t|
     t.string   "email"
-    t.string   "password"
+    t.string   "name"
+    t.string   "avatar_url"
+    t.string   "oauth_token"
     t.string   "about"
     t.datetime "created_at"
     t.datetime "updated_at"
