@@ -2,7 +2,7 @@ require 'spec_helper'
 
 describe Tagging do
   before(:each) do
-    @tagging = Tagging.new
+    @tagging = Tagging.new(question_id: 1, tag_id: 1)
   end
 
   it "should be valid when new" do

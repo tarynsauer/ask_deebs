@@ -2,7 +2,7 @@ require 'spec_helper'
 
 describe Tag do
   before(:each) do
-    @tag = Tag.new(name: "Ruby")
+    @tag = Tag.create(name: "Ruby")
   end
 
   it "should be valid when new" do
@@ -16,4 +16,9 @@ describe Tag do
   it "should respond to questions" do
     @tag.should respond_to(:questions)
   end
+
+  it "should not add new tag if not unique" do
+    expect { Tag.create(name: "Ruby") }.to_not change{Tag.count}.by(1)
+  end
+
 end
