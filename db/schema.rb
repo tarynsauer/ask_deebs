@@ -19,6 +19,7 @@ ActiveRecord::Schema.define(version: 20130919164103) do
   create_table "answers", force: true do |t|
     t.text     "content"
     t.integer  "question_id"
+    t.integer  "user_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
