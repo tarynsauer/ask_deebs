@@ -23,7 +23,7 @@ class QuestionsController < ApplicationController
         @question.tags.find_or_create_by(name: tag)
       end
       redirect_to @question
-    else 
+    else
       redirect_to new_question_path
     end
   end
