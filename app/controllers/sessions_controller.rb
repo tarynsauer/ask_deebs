@@ -5,10 +5,10 @@ class SessionsController < ApplicationController
   end
 
   def auth
-    p token = get_oauth_token(params[:code])
+    token = get_oauth_token(params[:code])
     user_data = get_user(token)
-    p user_attributes = JSON.parse(user_data.body)
-    p session[:user_attributes] = user_attributes
+    user_attributes = JSON.parse(user_data.body)
+    session[:user_attributes] = user_attributes
     p session[:oauth_token] = token_as_hash(token)
     puts "were testing here"
     redirect_to root_path
