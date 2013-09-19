@@ -6,7 +6,7 @@ class ApplicationController < ActionController::Base
   end
 
   def current_user
-    @current_user ||= User.new(session[:user_attributes]) if session[:user_id]
+    @current_user ||= User.find_or_create_by(session[:user_attributes]) if session[:user_id]
   end
 
   helper_method :current_user 
