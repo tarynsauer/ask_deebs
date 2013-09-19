@@ -7,7 +7,13 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-
+<nav>
+ <% #if @auth %>
+    <li><%=link_to "Logout", logout_path %></li>
+ <% #else %>
+    <li><%=link_to "Sign in to Socrates", signin_path %></li>
+ <% #end %>
+</nav>
 <%= yield %>
 
 </body>
