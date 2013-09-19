@@ -6,3 +6,4 @@ AskDeebs::Application.initialize!
 
 
 require 'dbc-ruby'
+

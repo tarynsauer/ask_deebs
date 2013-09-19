@@ -23,3 +23,6 @@ end
 100.times do
   Vote.create(like: [true, false].sample, answer_id: rand(1..50), user_id: rand(1..5) )
 end
+
+
+

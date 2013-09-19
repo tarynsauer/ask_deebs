@@ -1,1 +1,33 @@
-<%= @question.content %>
+<h2><%= @question.content %></h2>
+
+Tags:
+<ul>
+  <% @question.tags.each do |tag| %>
+    <li>
+      <%= tag.name %>
+    </li>
+  <% end %>
+</ul>
+
+
+<%= form_for([@question, Answer.new()]) do |f| %>
+
+<p>
+  <%= f.label :content %>
+  <%= f.text_area :content %>
+</p>
+
+<p>
+  <%= f.submit %>
+</p>
+
+<% end %>
+
+
+<% unless @question.answers.empty? %>
+  <ul>
+    <% @question.answers.each do |answer| %>
+      <li> <%= answer.content %> </li>
+    <% end %>
+  </ul>
+<% end %>

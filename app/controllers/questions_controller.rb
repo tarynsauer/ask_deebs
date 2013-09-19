@@ -13,17 +13,20 @@ class QuestionsController < ApplicationController
   end
 
   def create
-    @question = Question.new(params[:question])
-
-    # Create callback in Question model to parse tags
-    p params[:question][:tags]
-
-    # @tags = params[:tags].map { |tag| tag.strip }
-    # @tags.each do |tag|
-    #   @question.tags.find_or_create_by(name: tag)
-    # end
-    # redirect_to @question
+    if current_user
+      @user = current_user
+      @question = @user.questions.new(content: params[:question][:content])
+      if @question.save
+        @question.tags = params[:question][:tags]
+        redirect_to @question
+      else
+        redirect_to new_question_path
+      end
+    else
+      redirect_to signin_path
+    end
   end
+
 
 
 end
