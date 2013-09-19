@@ -29,6 +29,8 @@ ActiveRecord::Schema.define(version: 20130918231750) do
   end
 
   create_table "taggings", force: true do |t|
+    t.integer  "question_id"
+    t.integer  "tag_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
