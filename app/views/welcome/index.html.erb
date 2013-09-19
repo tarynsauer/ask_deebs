@@ -5,6 +5,8 @@
   <%= @user.email %>
   <% end %>
 
+<h3><%= link_to "Ask A Question", new_question_path %></h3>
+
 <h2>Questions</h2>
 <ul class="question_list">
   <% @questions.each do |question| %>
