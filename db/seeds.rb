@@ -7,7 +7,6 @@
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 require 'faker'
 
-
 20.times do
   Question.create(content: Faker::Company.bs )
 end
