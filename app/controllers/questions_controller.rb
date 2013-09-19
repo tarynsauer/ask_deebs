@@ -17,12 +17,7 @@ class QuestionsController < ApplicationController
       @user = User.first
       @question = @user.questions.new(content: params[:question][:content])
       if @question.save
-        tags_array = params[:question][:tags].split(",")
-        @tags = tags_array.map { |tag| tag.strip }
-        
-        @tags.each do |tag|
-          @question.tags.find_or_create_by(name: tag)
-        end
+        @question.tags = params[:question][:tags]
         redirect_to @question
       else
         redirect_to new_question_path
@@ -31,4 +26,7 @@ class QuestionsController < ApplicationController
       redirect_to signin_path
     end
   end
+
+
+
 end
