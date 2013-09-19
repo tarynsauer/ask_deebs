@@ -32,6 +32,10 @@ group :doc do
   gem 'sdoc', require: false
 end
 
+group :development do
+  gem 'faker'
+end
+
 group :test do
   gem 'rspec-rails'
   gem 'capybara'
