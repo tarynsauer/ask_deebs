@@ -11,3 +11,6 @@ require 'faker'
 20.times do
   Question.create(content: Faker::Company.bs )
 end
+
+
+User.create(email:"a@a.com", password:"a" )
