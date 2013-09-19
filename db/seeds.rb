@@ -12,4 +12,4 @@ require 'faker'
 end
 
 
-User.create(email:"a@a.com", password:"a" )
+

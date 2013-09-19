@@ -1,11 +1,12 @@
 class ApplicationController < ActionController::Base
   
+  
   def authenticated?
     !session[:oauth_token].nil?
   end
 
   def current_user
-    @current_user ||= User.new(session[:user_attributes])
+    @current_user ||= User.new(session[:user_attributes]) if session[:user_id]
   end
 
   helper_method :current_user 
