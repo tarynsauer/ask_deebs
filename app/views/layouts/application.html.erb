@@ -8,7 +8,11 @@
 </head>
 <body>
 <nav>
- <li><%=link_to "Sign in to Socrates", signin_path %></li>
+ <% #if @auth %>
+    <li><%=link_to "Logout", logout_path %></li>
+ <% #else %>
+    <li><%=link_to "Sign in to Socrates", "/signin" %></li>
+ <% #end %>
 </nav>
 <%= yield %>
 

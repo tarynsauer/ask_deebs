@@ -4,7 +4,7 @@ AskDeebs::Application.routes.draw do
   get 'signup', to: 'users#new'
   get 'signin', to: 'sessions#signin'
   get 'auth', to: 'sessions#new'
-  get 'logout', to: 'sessions#destroy'
+  get 'logout', to: 'sessions#logout'
 
   resources :questions do
     resources :answers, :except => [:index, :show]
