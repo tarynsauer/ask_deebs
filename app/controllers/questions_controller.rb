@@ -13,8 +13,8 @@ class QuestionsController < ApplicationController
   end
 
   def create
-    if current_user
-      @user = current_user
+    if true
+      @user = User.first
       @question = @user.questions.new(content: params[:question][:content])
       if @question.save
         tags_array = params[:question][:tags].split(",")
