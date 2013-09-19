@@ -1,1 +1,14 @@
-<%= @user.email %>
+
+<h2>User Profile</h2>
+<h2><%= @user.email %></h2>
+
+
+<% unless @user.questions.empty? %>
+  <ul>
+  <% @user.questions.each do |question| %>
+    <li>
+      <%= question.content %>
+    </li>
+  <% end %>
+  </ul>
+<% end %>
