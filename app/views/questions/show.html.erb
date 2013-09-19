@@ -22,3 +22,12 @@ Tags:
 </p>
 
 <% end %>
+
+
+<% unless @question.answers.empty? %>
+  <ul>
+    <% @question.answers.each do |answer| %>
+      <li> <%= answer.content %> </li>
+    <% end %>
+  </ul>
+<% end %>
