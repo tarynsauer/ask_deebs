@@ -7,7 +7,9 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-
+<nav>
+ <li><%=link_to "Sign in to Socrates", signin_path %></li>
+</nav>
 <%= yield %>
 
 </body>
