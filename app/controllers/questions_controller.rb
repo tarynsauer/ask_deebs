@@ -33,5 +33,10 @@ class QuestionsController < ApplicationController
     redirect_to @question
   end
 
+  def unfollow
+    @question = Question.find(params[:id])
+    @question.followers << current_user
+    redirect_to @question
+  end
 
 end
