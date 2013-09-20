@@ -1,12 +1,10 @@
 class Question < ActiveRecord::Base
   belongs_to :user
   has_many :answers
-  
   has_many :taggings
   has_many :tags, through: :taggings
-  
   has_many :question_followeds
-  has_many :followers, :through => :question_followeds, :source => :users
+  has_many :followers, :through => :question_followeds, :source => :user
 
   validates :content, :presence => true
 
@@ -18,5 +16,4 @@ class Question < ActiveRecord::Base
       self.tags.find_or_create_by(name: tag)
     end
   end
-
 end
