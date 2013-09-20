@@ -47,6 +47,7 @@ ActiveRecord::Schema.define(version: 20130919164103) do
 
   create_table "tags", force: true do |t|
     t.string   "name"
+    t.integer  "taggings_count"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -65,8 +66,8 @@ ActiveRecord::Schema.define(version: 20130919164103) do
 
   create_table "votes", force: true do |t|
     t.boolean  "like"
-    t.integer  "user_id"
     t.integer  "answer_id"
+    t.integer  "user_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
