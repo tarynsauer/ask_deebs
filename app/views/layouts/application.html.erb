@@ -14,11 +14,13 @@
         <h1>ASK DEEBs</h1>
         <nav>
           <ul>
-           <% if current_user %>
-              <li><%=link_to "Logout", logout_path %></li>
-           <% else %>
+            <li><%= link_to "Home", root_path %></li>
+            <% if current_user %>
+              <li><%= link_to "Profile", current_user %></li>
+              <li><%= link_to "Logout", logout_path %></li>
+            <% else %>
               <li><a class='sign-in' href='/signin'>Sign In</a></li>
-           <% end %>
+            <% end %>
             </ul>
           </nav>
         </div>
