@@ -18,12 +18,7 @@ class Question < ActiveRecord::Base
   end
 
   def self.search(term)
-    if term
-      find(:all, :conditions => ['content LIKE ?', "%#{term}%"])
-    else
-      find(:all)
-    end
+    find(:all, :conditions => ['content LIKE ?', "%#{term}%"])
   end
-
 
 end
