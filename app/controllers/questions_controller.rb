@@ -6,6 +6,8 @@ class QuestionsController < ApplicationController
 
   def show
     @question = Question.find(params[:id])
+    @answers = @question.answers
+    @answers_sorted = @answers.sort! {|x, y| y.count_total_likes <=> x.count_total_likes }
   end
 
   def new
@@ -26,7 +28,4 @@ class QuestionsController < ApplicationController
       redirect_to signin_path
     end
   end
-
-
-
 end
