@@ -7,6 +7,13 @@
 
 <h3><%= link_to "Ask A Question", new_question_path %></h3>
 
+<%= form_tag root_path, :method => 'get' do %>
+<p>
+    <%= text_field_tag :search, params[:search] %>
+    <%= submit_tag "Search", :name => nil %>
+</p>
+<% end %>
+
 <h2>Questions</h2>
 <ul class="question_list">
   <% @questions.each do |question| %>
