@@ -35,7 +35,7 @@ class QuestionsController < ApplicationController
 
   def unfollow
     @question = Question.find(params[:id])
-    @question.followers << current_user
+    current_user.followed_questions.delete(@question)
     redirect_to @question
   end
 
