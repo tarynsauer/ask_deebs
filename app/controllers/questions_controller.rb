@@ -28,4 +28,17 @@ class QuestionsController < ApplicationController
       redirect_to signin_path
     end
   end
+
+  def follow
+    @question = Question.find(params[:id])
+    @question.followers << current_user
+    redirect_to @question
+  end
+
+  def unfollow
+    @question = Question.find(params[:id])
+    current_user.followed_questions.delete(@question)
+    redirect_to @question
+  end
+
 end
