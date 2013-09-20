@@ -19,4 +19,12 @@ class Answer < ActiveRecord::Base
     self.count_ups - self.count_downs
   end
 
+  def self.search(term)
+    if term
+      find(:all, :conditions => ['content LIKE ?', "%#{term}%"])
+    else
+      find(:all)
+    end
+  end
+
 end
