@@ -27,6 +27,11 @@ class QuestionsController < ApplicationController
     end
   end
 
+  def follow
+    @question = Question.find(params[:id])
+    @question.followers << current_user
+    redirect_to @question
+  end
 
 
 end
