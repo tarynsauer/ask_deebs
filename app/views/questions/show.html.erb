@@ -25,7 +25,7 @@ Tags:
 
 <% unless @question.answers.empty? %>
   <ul>
-    <% @question.answers.each do |answer| %>
+    <% @answers_sorted.each do |answer| %>
       <li> <%= answer.content %> | LIKES: <%=answer.count_total_likes %>
       <%= link_to "Vote Up", vote_up_path(:answer_id => answer.id, :question_id => @question.id), method: :post  %> /
       <%= link_to "Vote Down", vote_down_path(:answer_id => answer.id, :question_id => @question.id), method: :post  %>
