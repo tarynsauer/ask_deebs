@@ -40,11 +40,11 @@
 </ul>
 
 <h2>Tags</h2>
-<ol>
+<div id='tagCloud'>
   <% @tags.each do |tag| %>
-    <li><%= link_to tag.name, tag %></li>
+    <%= link_to tag.name, tag, data: { count: tag.taggings_count} %>
   <% end %>
-</ol>
+</div>
 
 
 
