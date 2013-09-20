@@ -42,6 +42,19 @@
   <% end %>
 </ul>
 
+<% if @answers %>
+  <h2>Answer Matches</h2>
+
+  <ul class="answer_list">
+    <% @answers.each do |answer| %>
+      <li> <%= answer.content %></li>      
+    <% end %>
+  </ul>
+
+<% end %>
+
+
+
 <h2>Tags</h2>
 <div id='tagCloud'>
   <% @tags.each do |tag| %>
