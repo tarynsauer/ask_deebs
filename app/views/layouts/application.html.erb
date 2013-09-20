@@ -8,11 +8,14 @@
 </head>
 <body>
 <nav>
- <% if current_user %>
-    <li><%=link_to "Logout", logout_path %></li>
- <% else %>
-    <li><%=link_to "Sign in to Socrates", signin_path %></li>
- <% end %>
+<ul>
+  <li><%= link_to "Home", root_path %></li>
+<% if current_user %>
+  <li><%=link_to "Logout", logout_path %></li>
+<% else %>
+  <li><%=link_to "Sign in to Socrates", signin_path %></li>
+<% end %>
+</ul>
 </nav>
 <%= yield %>
 
