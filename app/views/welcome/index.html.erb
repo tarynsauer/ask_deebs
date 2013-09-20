@@ -42,7 +42,7 @@
 <h2>Tags</h2>
 <ol>
   <% @tags.each do |tag| %>
-    <li><%= tag.name %></li>
+    <li><%= link_to tag.name, tag %></li>
   <% end %>
 </ol>
 
