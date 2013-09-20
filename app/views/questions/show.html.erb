@@ -36,9 +36,10 @@ Tags:
   </ul>
 <% end %>
 
-<% if is_following?(@question.id) %>
-  <%= link_to "Stop following this Question", question_unfollow_path, options = { :method => :post } %>
-<% else %>
-  <%= link_to "Follow this Question", question_follow_path, options = { :method => :post } %>
+<% if current_user %>
+  <% if is_following?(@question.id) %>
+    <%= link_to "Stop following this Question", question_unfollow_path, options = { :method => :post } %>
+  <% else %>
+    <%= link_to "Follow this Question", question_follow_path, options = { :method => :post } %>
+  <% end %>
 <% end %>
-
