@@ -1,7 +1,7 @@
 <h1>Ask Deebz</h1>
 
 <%if @user %>
-  <%= @user.name %>
+  <%= link_to @user.name, @user %>
   <%= @user.email %>
   <% end %>
 
