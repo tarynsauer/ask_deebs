@@ -1,8 +1,8 @@
 class AnswersController < ApplicationController
 
   def create
-    if true
-      @user = User.first
+    if current_user
+      @user = current_user
       @question = Question.find(params[:question_id])
       @answer = @question.answers.create(content: params[:answer][:content])
       @answer.update(user_id: @user.id)
@@ -10,7 +10,7 @@ class AnswersController < ApplicationController
       # p @answer
       redirect_to @question
     else
-      redirect_to @question
+      redirect_to signin_path
     end
 
   end
