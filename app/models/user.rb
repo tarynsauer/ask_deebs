@@ -7,6 +7,7 @@ class User < ActiveRecord::Base
   has_many :answers
   has_many :votes
   has_many :question_followeds
-  has_many :followed_questions, :through => :question_followeds, :source => :question
+  has_many :followed_questions, :through => :question_followeds,
+   :source => :question, :dependent => :destroy
 
 end
