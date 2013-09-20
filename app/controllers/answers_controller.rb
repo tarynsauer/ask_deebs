@@ -8,7 +8,7 @@ class AnswersController < ApplicationController
   
       redirect_to @question
     else
-      redirect_to @question
+      redirect_to signin_path
     end
 
   end
