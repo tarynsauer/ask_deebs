@@ -1,0 +1,7 @@
+<h2>questions containing tag: <%= @tag.name %></h2>
+
+<ol>
+  <% @tag.questions.each do |question| %>
+    <li><%= link_to question.content, question %></li>
+  <% end %>
+</ol>
