@@ -7,6 +7,13 @@
 # #   Mayor.create(name: 'Emanuel', city: cities.first)
 require 'faker'
 
+
+sample_tags = ['javascript', 'ruby', 'unix', 'jquery', 'rails', 'sinatra', 'active record']
+
+20.times do
+  question = Question.create(content: Faker::Company.bs)
+  question.tags = sample_tags.sample(2).join(",")
+
 5.times do
   User.create(email: Faker::Internet.email, name: Faker::Name.name, avatar_url: Faker::Internet.domain_name,
     oauth_token: Faker::PhoneNumber.phone_number, about: Faker::Company.catch_phrase)
@@ -22,6 +29,7 @@ end
 
 100.times do
   Vote.create(like: [true, false].sample, answer_id: rand(1..50), user_id: rand(1..5) )
+
 end
 
 

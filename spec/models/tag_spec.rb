@@ -21,4 +21,7 @@ describe Tag do
     expect { Tag.create(name: "Ruby") }.to_not change{Tag.count}.by(1)
   end
 
+  it "should respond to taggings_count" do
+    @tag.should respond_to(:taggings_count)
+  end
 end

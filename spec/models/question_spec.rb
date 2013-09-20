@@ -21,4 +21,9 @@ describe Question do
     @question.should respond_to(:tags)
   end
 
+  it "should associate tags with a question" do
+    @question.tags = 'ruby, javascript'
+    @question.tags.length.should eq(2) 
+  end
+
 end
