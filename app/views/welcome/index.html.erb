@@ -15,16 +15,20 @@
 </p>
 <% end %>
 
-<h2>Your Questions</h2>
 
-<% if @user && !@user.questions.empty?%>
+
+<% if current_user %>
+  <h2>Your Questions</h2>
     <ul>
-      <% @user.questions.each do |question| %>
-        <li> <%= link_to question.content, question %></li>
+      <% if @user.questions.empty? %>
+        <p>You have no questions.</p>
+      <% else %>
+        <% @user.questions.each do |question| %>
+          <li> <%= link_to question.content, question %></li>
+        <% end %>
       <% end %>
     </ul>
-<% else %>
-  <p>You have no questions.</p>
+    
 <% end %>
 
 <h2>All Questions</h2>
