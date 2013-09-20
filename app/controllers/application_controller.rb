@@ -1,8 +1,8 @@
 class ApplicationController < ActionController::Base
   
   
-  def authenticated?
-    !session[:oauth_token].nil?
+  def logged_in?
+    !current_user.nil?
   end
 
   def current_user
@@ -10,7 +10,7 @@ class ApplicationController < ActionController::Base
   end
 
   helper_method :current_user 
-  helper_method :authenticated?
+  helper_method :logged_in?
 
   # Prevent CSRF attacks by raising an exception.
   # For APIs, you may want to use :null_session instead.
