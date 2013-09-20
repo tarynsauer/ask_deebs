@@ -12,7 +12,12 @@ class QuestionsController < ApplicationController
   end
 
   def new
-    @question = Question.new
+    if request.xhr?
+      @question = Question.new
+      render layout: false
+    else
+      @question = Question.new
+    end
   end
 
   def create

@@ -1,11 +1,9 @@
-// $(document).ready(function () {
-//   $.post( "ajax/test.html", function( data ) {
-//     $( "a" ).click(function( event ) {
-//   event.preventDefault();
-//     $console.log(this);
-//     url = $()
-//     data =
-//   $( ".result" ).html( data );
-// });
-// });
-// });
+$(document).ready(function(){
+  $('h3.ask-question').on("click", function(event){
+    event.preventDefault();
+    $.get("/questions/new", function(data) {
+      $('h3.ask-question').hide();
+      $('form.search').before(data);
+    });
+  });
+});
