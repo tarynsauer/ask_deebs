@@ -5,20 +5,38 @@
   <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
   <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
   <%= csrf_meta_tags %>
+  <link href='http://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
 </head>
-<body>
-<nav>
-<ul>
-  <li><%= link_to "Home", root_path %></li>
-<% if current_user %>
-  <li><%= link_to "Profile", current_user %></li>
-  <li><%= link_to "Logout", logout_path %></li>
-<% else %>
-  <li><%= link_to "Sign in to Socrates", signin_path %></li>
-<% end %>
-</ul>
-</nav>
-<%= yield %>
-
-</body>
+  <body>
+    <div class = "wrapper">
+    <header>
+      <div class='container'>
+        <h1>ASK DEEBs</h1>
+        <nav>
+          <ul>
+            <li><%= link_to "Home", root_path %></li>
+            <% if current_user %>
+              <li><%= link_to "Profile", current_user %></li>
+              <li><%= link_to "Logout", logout_path %></li>
+            <% else %>
+              <li><a class='sign-in' href='/signin'>Sign In</a></li>
+            <% end %>
+            </ul>
+          </nav>
+        </div>
+    </header>
+    <div class = content>
+      <div id ="guide" class="stick">
+        <p class="ref-title">WELCOME</p>
+      </div>
+      <div id="fullcontainer">
+        <a id="top" name="top" class="section-anchor">&nbsp;</a>
+      </div>
+      <div id="displays">
+      </div>
+      <%= yield %>
+    </div>
+  </div>
+    <footer></footer>
+  </body>
 </html>

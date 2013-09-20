@@ -1,0 +1,181 @@
+
+.wrapper{
+  min-height: 100%;
+  margin-bottom: -90px;
+  display: block;
+}
+
+header .container{
+
+  padding: 10px 20px;
+}
+
+.container {
+  margin: 0 auto;
+}
+
+header{
+width: 100%;
+min-height: 100px;
+max-height: 92px;
+background: rgba(255,255,255,.96);
+position: fixed;
+top: 0;
+left: 0;
+border-bottom: 1px solid rgba(0,0,0,.35);
+z-index: 50;
+
+}
+
+header nav {
+  width: 45%;
+  overflow: hidden;
+  min-width: 600px;
+}
+
+div {
+  display: block;
+}
+
+nav{
+  display: inline-block;
+  text-align: right;
+  float: right;
+  line-height: 50px;
+  position: relative;
+}
+
+nav ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+nav ul li {
+  display: inline-block;
+  margin-left: 20px;
+}
+
+nav ul a {
+  color: #7f8081;
+  text-decoration: none;
+}
+
+nav ul a.sign-in {
+  color: #fff;
+  padding: 5px 20px;
+  text-align: center;
+
+  background: linear-gradient(to bottom,#ef5344 0%,#e64a3b 100%);
+  border: 1px solid #b03b30;
+  -moz-border-radius: 3px;
+
+  border-radius: 3px;
+  width: 87px;
+  height: 25px;
+  text-transform: uppercase;
+
+  position: fixed;
+  top: 20px;
+  right: 80px;
+  line-height: 25px;
+}
+
+.content {
+  margin-top: 100px;
+  margin-left: 200px;
+}
+
+div#fullcontainer div#displays {
+  box-shadow: #0f131a -1px 0 0, rgba(0,0,0,0.5) 1px 0 2px inset;
+  background-color: #292e33;
+  margin-left: 50%;
+  position: relative;
+}
+
+div#fullcontainer div#displays .display:first-child .display-section {
+  padding-top: 100px;
+}
+
+
+div#fullcontainer div#displays .method-section {
+  clear: left;
+  font-size: 13px;
+  line-height: 1.9em;
+  margin-left: -100%;
+  padding-top: 0;
+  position: relative;
+  border-bottom: 1px solid #adbfd9;
+  overflow: hidden;
+  padding-bottom: 45px;
+}
+
+
+p {
+  display: block;
+  -webkit-margin-before: 1em;
+  -webkit-margin-after: 1em;
+  -webkit-margin-start: 0px;
+  -webkit-margin-end: 0px;
+}
+
+div#guide.stick {
+  left: 0;
+  position: fixed;
+  top: 0;
+}
+
+div#guide {
+  background: white;
+  border-right: 1px solid #dadfe5;
+  bottom: 0;
+  left: 0;
+  overflow: hidden;
+  position: absolute;
+  top: 50px;
+  width: 200px;
+  z-index: 25;
+  margin-top: 100px;
+}
+
+div#guide p.ref-title {
+  color: #7a8e99;
+  font-size: 11px;
+  font-weight: bold;
+  padding: 24px 20px 6px;
+  font-family: 'Montserrat', sans-serif;
+
+}
+
+div#guide p.ref-title:first-child {
+  padding-top: 0;
+}
+
+div#fullcontainer {
+  background: white;
+  margin-left: 200px;
+  width: 100%;
+  position: relative;
+}
+
+div#api-docs a.section-anchor {
+  display: block;
+  height: 0;
+}
+
+h1{
+
+  font-family: 'Montserrat', sans-serif;
+}
+
+li{
+
+
+  font-family: 'Montserrat', sans-serif;
+  list-style: none;
+}
+
+li a{
+  color: #7f8081;
+  text-decoration: none;
+
+}
