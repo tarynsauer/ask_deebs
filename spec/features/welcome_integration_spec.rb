@@ -12,4 +12,10 @@ describe "Welcome page" do
     page.should have_content('Code School!')
   end
 
+  it "should allow a user to visit a tags page" do
+    visit root_path
+    click_link "unix"
+    page.should have_content('questions containing tag: unix')
+  end
+
 end
