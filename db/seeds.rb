@@ -10,18 +10,14 @@ require 'faker'
 
 sample_tags = ['javascript', 'ruby', 'unix', 'jquery', 'rails', 'sinatra', 'active record']
 
-20.times do
-  question = Question.create(content: Faker::Company.bs)
-  question.tags = sample_tags.sample(2).join(",")
-end
-
 5.times do
   User.create(email: Faker::Internet.email, name: Faker::Name.name, avatar_url: Faker::Internet.domain_name,
     oauth_token: Faker::PhoneNumber.phone_number, about: Faker::Company.catch_phrase)
 end
 
 20.times do
-  Question.create(content: Faker::Company.bs, user_id: rand(1..5) )
+  question = Question.create(content: Faker::Company.bs, user_id: rand(1..5) )
+  question.tags = sample_tags.sample(2).join(",")
 end
 
 50.times do

@@ -15,6 +15,8 @@ AskDeebs::Application.routes.draw do
 
   resources :users
 
+  resources :tags, :only => [:show]
+
   post 'questions/:id/follow', to: 'questions#follow', as: "question_follow"
   post 'questions/:id/unfollow', to: 'questions#unfollow', as: "question_unfollow"
 
