@@ -28,7 +28,4 @@ class QuestionsController < ApplicationController
       redirect_to signin_path
     end
   end
-
-
-
 end
