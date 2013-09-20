@@ -11,7 +11,7 @@
 <ul>
   <li><%= link_to "Home", root_path %></li>
 <% if current_user %>
-  <li><%= link_to "Profile", @user %></li>
+  <li><%= link_to "Profile", current_user %></li>
   <li><%= link_to "Logout", logout_path %></li>
 <% else %>
   <li><%= link_to "Sign in to Socrates", signin_path %></li>
