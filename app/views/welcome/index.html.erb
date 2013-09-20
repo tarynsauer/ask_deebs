@@ -1,11 +1,12 @@
 <h1>Ask Deebz</h1>
 
 <%if @user %>
-  <%= @user.name %>
+  <%= link_to @user.name, @user %>
   <%= @user.email %>
   <% end %>
 
 <h3><%= link_to "Ask A Question", new_question_path %></h3>
+
 
 <%= form_tag root_path, :method => 'get' do %>
 <p>
@@ -14,12 +15,32 @@
 </p>
 <% end %>
 
-<h2>Questions</h2>
+<h2>Your Questions</h2>
+
+<% if @user && !@user.questions.empty?%>
+    <ul>
+      <% @user.questions.each do |question| %>
+        <li> <%= link_to question.content, question %></li>
+      <% end %>
+    </ul>
+<% else %>
+  <p>You have no questions.</p>
+<% end %>
+
+<h2>All Questions</h2>
+
 <ul class="question_list">
   <% @questions.each do |question| %>
     <li> <%= link_to question.content, question %></li>      
   <% end %>
 </ul>
+
+<h2>Tags</h2>
+<ol>
+  <% @tags.each do |tag| %>
+    <li><%= tag.name %></li>
+  <% end %>
+</ol>
 
 
 

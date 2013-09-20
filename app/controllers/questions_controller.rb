@@ -7,6 +7,8 @@ class QuestionsController < ApplicationController
 
   def show
     @question = Question.find(params[:id])
+    @answers = @question.answers
+    @answers_sorted = @answers.sort! {|x, y| y.count_total_likes <=> x.count_total_likes }
   end
 
   def new
@@ -28,6 +30,16 @@ class QuestionsController < ApplicationController
     end
   end
 
+  def follow
+    @question = Question.find(params[:id])
+    @question.followers << current_user
+    redirect_to @question
+  end
 
+  def unfollow
+    @question = Question.find(params[:id])
+    current_user.followed_questions.delete(@question)
+    redirect_to @question
+  end
 
 end

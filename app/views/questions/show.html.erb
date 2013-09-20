@@ -23,11 +23,22 @@ Tags:
 
 <% end %>
 
-
 <% unless @question.answers.empty? %>
   <ul>
-    <% @question.answers.each do |answer| %>
-      <li> <%= answer.content %> </li>
+    <% @answers_sorted.each do |answer| %>
+      <li> <%= answer.content %> | <span>LIKES: <%=answer.count_total_likes %></span>
+      <% if current_user %>
+        <%= link_to "Vote Up", vote_up_path(:answer_id => answer.id, :question_id => @question.id), method: :post  %> /
+        <%= link_to "Vote Down", vote_down_path(:answer_id => answer.id, :question_id => @question.id), method: :post  %>
+      <% end %>
+      </li>
     <% end %>
   </ul>
 <% end %>
+
+<% if is_following?(@question.id) %>
+  <%= link_to "Stop following this Question", question_unfollow_path, options = { :method => :post } %>
+<% else %>
+  <%= link_to "Follow this Question", question_follow_path, options = { :method => :post } %>
+<% end %>
+
