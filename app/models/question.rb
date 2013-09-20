@@ -15,7 +15,7 @@ class Question < ActiveRecord::Base
     tags = tags_array.map { |tag| tag.strip.downcase }
 
     tags.each do |tag|
-      self.tags.find_or_create_by(name: tag)
+      self.tags << Tag.find_or_create_by(name: tag)
     end
   end
 
