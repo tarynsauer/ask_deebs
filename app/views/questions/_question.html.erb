@@ -1,1 +1,1 @@
-<li><%= link_to question.content, question %></li>
+<li><%= image_tag question.user.avatar_url, size: "20x20" %> <%= link_to question.title, question %> ( <%= question.answers.count%> ) </li>
