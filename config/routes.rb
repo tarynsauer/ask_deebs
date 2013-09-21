@@ -6,8 +6,7 @@ AskDeebs::Application.routes.draw do
   get 'auth', to: 'sessions#auth'
   get 'logout', to: 'sessions#logout'
 
-  post 'vote_up', to: 'answers#vote_up'
-  post 'vote_down', to: 'answers#vote_down'
+  get 'vote', to: 'answers#vote'
 
   resources :questions do
     resources :answers, :except => [:index, :show]
