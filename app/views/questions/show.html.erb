@@ -1,5 +1,6 @@
-<h2><%= @question.content %></h2>
-
+<h2><%= @question.title %></h2>
+<p><%= @question.content%></p>
+<p><%= @question.created_at %></p>
 Tags:
 <ul>
   <% @question.tags.each do |tag| %>
