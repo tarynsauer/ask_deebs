@@ -6,7 +6,11 @@ class AnswersController < ApplicationController
       @answer = @question.answers.create(content: params[:answer][:content])
       @answer.update(user_id: current_user.id)
 
-      redirect_to @question
+      if request.xhr?
+        render :partial => "answer_item", :locals => {answer: @answer}
+      else
+        redirect_to @question
+      end
     else
       redirect_to signin_path
     end
