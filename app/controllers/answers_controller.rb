@@ -7,12 +7,13 @@ class AnswersController < ApplicationController
       @answer.update(user_id: current_user.id)
 
       if request.xhr?
-        render text: "<li> <%= answer.content %> | <span>LIKES: <%=answer.count_total_likes %></span>
-      <% if current_user %>
-        <%= link_to "Vote Up", vote_up_path(:answer_id => answer.id, :question_id => @question.id), method: :post  %> /
-        <%= link_to "Vote Down", vote_down_path(:answer_id => answer.id, :question_id => @question.id), method: :post  %>
-      <% end %>
-      </li>"
+        render text: "<li> #{@answer.content} | <span class= "count-"#{@answer.id}">LIKES:\
+          "#{answer.count_total_likes}</span> if current_user<%= link_to "Vote Up",
+           vote_path(:answer_id => answer.id, :question_id => @question.id),
+            :data_question => "#{@question.id}", :id => "#{answer.id}", :class => "vote_up" %> /
+        <%= link_to "Vote Down", vote_path(:answer_id => answer.id, :question_id => @question.id),
+         :data_question => "#{@question.id}", :id => "#{answer.id}", :class => "vote_down" %>
+        <% end %></li>"
 
       else
         redirect_to @question
