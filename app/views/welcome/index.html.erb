@@ -37,6 +37,12 @@
       :object => @answers    %>
 </div>
 
+<h2>Tags</h2>
+<div id='tagCloud'>
+  <% @tags.each do |tag| %>
+    <%= link_to tag.name, tag, data: { count: tag.taggings_count} %>
+  <% end %>
+</div>
 
 
 
