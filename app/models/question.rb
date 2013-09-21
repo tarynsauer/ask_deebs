@@ -18,7 +18,11 @@ class Question < ActiveRecord::Base
   end
 
   def self.search(term)
-    find(:all, :conditions => ['lower(content) LIKE ?', "%#{term.downcase}%"])
+    if term
+      find(:all, :conditions => ['lower(content) LIKE ?', "%#{term.downcase}%"])
+    else
+      find(:all)
+    end
   end
 
 end
