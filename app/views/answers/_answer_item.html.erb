@@ -1,7 +1,7 @@
 <li><p>
   <%= answer.content %>
 
-  <%= link_to 'Edit', [:edit, @question, answer] %>
+  <%= link_to 'Edit', [:edit, @question, answer], :id => "answer_edit_#{answer.id}" %>
 
 </p>
 
