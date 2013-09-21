@@ -11,12 +11,12 @@ require 'faker'
 sample_tags = ['javascript', 'ruby', 'unix', 'jquery', 'rails', 'sinatra', 'active record']
 
 5.times do
-  User.create(email: Faker::Internet.email, name: Faker::Name.name, avatar_url: Faker::Internet.domain_name,
+  User.create(email: Faker::Internet.email, name: Faker::Name.name, avatar_url: "http://www.gravatar.com/avatar",
     oauth_token: Faker::PhoneNumber.phone_number, about: Faker::Company.catch_phrase)
 end
 
 80.times do
-  question = Question.create(title: Faker::Company.bs, content: Faker::Lorem.paragraph, user_id: rand(1..5) )
+  question = Question.create(title: Faker::Company.bs, content: Faker::Company.bs, user_id: rand(1..5) )
   question.tags = sample_tags.sample(2).join(",")
 end
 
