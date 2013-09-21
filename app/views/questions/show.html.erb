@@ -13,7 +13,7 @@ Tags:
 <%= form_for([@question, Answer.new()]) do |f| %>
 
 <p>
-  <%= f.label :content %>
+  <%= f.label :content %> <br>
   <%= f.text_area :content %>
 </p>
 
@@ -23,18 +23,18 @@ Tags:
 
 <% end %>
 
-<% unless @question.answers.empty? %>
-  <ul>
-    <% @answers_sorted.each do |answer| %>
-      <li> <%= answer.content %> | <span class=<%="count-#{answer.id}"%>>LIKES: <%=answer.count_total_likes %></span>
-      <% if current_user %>
-          <%= link_to "Vote Up", vote_path(:answer_id => answer.id, :question_id => @question.id), :data_question => "#{@question.id}", :id => "#{answer.id}", :class => "vote_up" %> /
-        <%= link_to "Vote Down", vote_path(:answer_id => answer.id, :question_id => @question.id), :data_question => "#{@question.id}", :id => "#{answer.id}", :class => "vote_down" %>
+<ul class="answers">
+  <% unless @question.answers.empty? %>
+      <% @answers_sorted.each do |answer| %>
+        <li> <%= answer.content %> | <span class=<%="count-#{answer.id}"%>>LIKES: <%=answer.count_total_likes %></span>
+        <% if current_user %>
+            <%= link_to "Vote Up", vote_path(:answer_id => answer.id, :question_id => @question.id), :data_question => "#{@question.id}", :id => "#{answer.id}", :class => "vote_up" %> /
+          <%= link_to "Vote Down", vote_path(:answer_id => answer.id, :question_id => @question.id), :data_question => "#{@question.id}", :id => "#{answer.id}", :class => "vote_down" %>
+        <% end %>
+        </li>
       <% end %>
-      </li>
-    <% end %>
-  </ul>
-<% end %>
+  <% end %>
+</ul>
 
 <% if current_user && (current_user != @question.user) %>
   <% if is_following?(@question.id) %>
