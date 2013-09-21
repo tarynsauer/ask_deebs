@@ -1,4 +1,6 @@
-# Getting Started
+# Ask Deebs
+
+This application allows DBC students/teachers/TAs (anyone with a Socrates login) to support each other by providing a platform to ask, answer, and follow questions on any issue or topic they are interested in. 
 
 ## Setup 
 
