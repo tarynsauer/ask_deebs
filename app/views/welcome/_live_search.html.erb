@@ -1,3 +1,10 @@
 <ul class="question_list">
-  <%= render @questions %>
+  <li><%= render @questions %></li>
 </ul>
+
+<% if @answers %>
+  <h2>Answer Matches</h2>
+  <ul class="answer_list">
+    <li><%= render @answers %></li>
+  </ul>
+<% end %>

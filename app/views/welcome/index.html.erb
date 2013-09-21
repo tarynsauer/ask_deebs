@@ -34,20 +34,15 @@
 
 <h2>All Questions</h2>
 
+
 <div id="live-search">
-  <%= render "live_search", :object => @questions %>
+  <%= render "live_search", 
+      :object => @questions, 
+      :object => @answers    %>
 </div>
 
-<% if @answers %>
-  <h2>Answer Matches</h2>
 
-  <ul class="answer_list">
-    <% @answers.each do |answer| %>
-      <li> <%= answer.content %></li>      
-    <% end %>
-  </ul>
 
-<% end %>
 
 
 
