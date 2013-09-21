@@ -1,0 +1,23 @@
+<h2><%= @question.content %></h2>
+
+Tags:
+<ul>
+  <% @question.tags.each do |tag| %>
+    <li>
+      <%= tag.name %>
+    </li>
+  <% end %>
+</ul>
+
+<%= form_for [@question, @answer] do |f| %>
+
+<p>
+  <%= f.label :content %> <br>
+  <%= f.text_area :content %>
+</p>
+
+<p>
+  <%= f.submit %>
+</p>
+
+<% end %>

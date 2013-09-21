@@ -1,5 +1,9 @@
 class AnswersController < ApplicationController
 
+  def new
+    @answer = Answer.new
+  end
+
   def create
     if current_user
       @question = Question.find(params[:question_id])
@@ -15,6 +19,22 @@ class AnswersController < ApplicationController
       redirect_to signin_path
     end
 
+  end
+
+  def edit
+    @question = Question.find(params[:question_id])
+    @answer = Answer.find(params[:id])
+    if request.xhr?
+
+    else
+
+    end
+  end
+
+  def update
+    @question = Question.find(params[:question_id])
+    @answer = Answer.update(params[:id], :content => params[:answer][:content])
+    redirect_to @question
   end
 
   def vote

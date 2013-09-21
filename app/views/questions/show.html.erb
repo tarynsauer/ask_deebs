@@ -11,7 +11,7 @@ Tags:
 </ul>
 
 
-<%= form_for([@question, Answer.new()]) do |f| %>
+<%= form_for [@question, Answer.new] do |f| %>
 
 <p>
   <%= f.label :content %> <br>
