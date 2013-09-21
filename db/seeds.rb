@@ -16,7 +16,7 @@ sample_tags = ['javascript', 'ruby', 'unix', 'jquery', 'rails', 'sinatra', 'acti
 end
 
 80.times do
-  question = Question.create(content: Faker::Company.bs, user_id: rand(1..5) )
+  question = Question.create(title: Faker::Company.bs, content: Faker::Lorem.paragraph, user_id: rand(1..5) )
   question.tags = sample_tags.sample(2).join(",")
 end
 
