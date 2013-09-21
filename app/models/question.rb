@@ -19,7 +19,7 @@ class Question < ActiveRecord::Base
 
   def self.search(term)
     if term
-      where('lower(content) LIKE ?', "%#{term.downcase}%")
+      where('lower(content) LIKE ? OR lower(title) LIKE ?', "%#{term.downcase}%", "%#{term.downcase}%")
     else
       all
     end
