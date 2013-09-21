@@ -16,7 +16,7 @@ class Answer < ActiveRecord::Base
   end
 
   def count_total_likes
-    self.count_ups - self.count_downs
+    self.votes.count - self.count_downs
   end
 
   def self.search(term)

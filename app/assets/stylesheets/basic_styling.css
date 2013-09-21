@@ -183,3 +183,5 @@ li a{
   text-decoration: none;
 
 }
+
+.vote_down, .vote_up {cursor: pointer}
