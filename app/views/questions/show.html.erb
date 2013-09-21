@@ -13,7 +13,7 @@ Tags:
 <%= form_for([@question, Answer.new()]) do |f| %>
 
 <p>
-  <%= f.label :content %>
+  <%= f.label :content %> <br>
   <%= f.text_area :content %>
 </p>
 
@@ -24,7 +24,7 @@ Tags:
 <% end %>
 
 <% unless @question.answers.empty? %>
-  <ul>
+  <ul class="answers">
     <% @answers_sorted.each do |answer| %>
       <li> <%= answer.content %> | <span>LIKES: <%=answer.count_total_likes %></span>
       <% if current_user %>
