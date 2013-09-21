@@ -5,10 +5,10 @@ $(document).ready(function(){
           var answerId = $(this).attr('id');
           answerId = answerId.slice(12);
           var replace = $('#answer_'+answerId)
-          console.log(answerId);
+
           $.get(url, function(success){
               $(replace).replaceWith(success);
-              console.log(success);
+
         }, "html");
     });
 });
