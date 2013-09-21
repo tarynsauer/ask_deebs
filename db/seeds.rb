@@ -15,13 +15,13 @@ sample_tags = ['javascript', 'ruby', 'unix', 'jquery', 'rails', 'sinatra', 'acti
     oauth_token: Faker::PhoneNumber.phone_number, about: Faker::Company.catch_phrase)
 end
 
-20.times do
+80.times do
   question = Question.create(content: Faker::Company.bs, user_id: rand(1..5) )
   question.tags = sample_tags.sample(2).join(",")
 end
 
 50.times do
-  Answer.create(content: Faker::Lorem.sentence, question_id: rand(1..20), user_id: rand(1..5))
+  Answer.create(content: Faker::Lorem.sentence, question_id: rand(1..80), user_id: rand(1..5))
 end
 
 100.times do
