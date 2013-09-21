@@ -14,17 +14,16 @@ header .container{
   margin: 0 auto;
 }
 
-header{
-width: 100%;
-min-height: 100px;
-max-height: 92px;
-background: rgba(255,255,255,.96);
-position: fixed;
-top: 0;
-left: 0;
-border-bottom: 1px solid rgba(0,0,0,.35);
-z-index: 50;
-
+header {
+  width: 100%;
+  min-height: 100px;
+  max-height: 92px;
+  background: rgba(255,255,255,.96);
+  position: fixed;
+  top: 0;
+  left: 0;
+  border-bottom: 1px solid rgba(0,0,0,.35);
+  z-index: 50;
 }
 
 header nav {
@@ -167,13 +166,10 @@ div #tagCloud {
 }
 
 h1{
-
   font-family: 'Montserrat', sans-serif;
 }
 
 li{
-
-
   font-family: 'Montserrat', sans-serif;
   list-style: none;
 }
@@ -189,3 +185,13 @@ li a{
 }
 
 .vote_down, .vote_up {cursor: pointer}
+
+.list_gravatars {
+  width: 20px;
+  height: 20px;
+}
+
+.profile_gravatar {
+  width: 100px;
+  height: 100px;
+}
