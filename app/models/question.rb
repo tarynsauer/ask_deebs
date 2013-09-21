@@ -10,7 +10,7 @@ class Question < ActiveRecord::Base
 
   def tags=(str)
     tags_array = str.split(",")
-    tags = tags_array.map { |tag| tag.strip.downcase }
+    tags = tags_array.map { |tag| tag.strip.downcase }.uniq
 
     tags.each do |tag|
       self.tags << Tag.find_or_create_by(name: tag)
