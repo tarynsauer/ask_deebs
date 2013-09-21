@@ -45,22 +45,18 @@ describe "Welcome page" do
 
   context "when a logged-in user clicks the ASK DEEBs logo" do
     before(:each) do
-      @user = User.create(:oauth_token => 1234, :email=> 'user@example.com',
-      :avatar_url => 'http://example.com/image', :name=> 'Example User')
-      session[@user.id] = 1
+      # @user = User.create(:oauth_token => 1234, :email=> 'user@example.com',
+      # :avatar_url => 'http://example.com/image', :name=> 'Example User')
+      session = Capybara::Session.new(:user_id, 6)
     end
 
     it "should reload the home page" do
-      click_link "ASK DEEBs"
-      page.should have_content("user@example.com")
+      session.click_link "ASK DEEBs"
+      page.should have_content("taryn.sauer@gmail.com")
     end
   end
 
   context "when a non-logged in user clicks the ASK DEEBs logo" do
-   before(:each) do
-     session.clear
-   end
-
     it "should reload the home page" do
       click_link "ASK DEEBs"
       page.should have_content("Sign In")
