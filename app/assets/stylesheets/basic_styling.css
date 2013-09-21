@@ -181,7 +181,11 @@ li{
 li a{
   color: #7f8081;
   text-decoration: none;
+}
 
+#logo {
+  text-decoration: none;
+  color: #262626;
 }
 
 .vote_down, .vote_up {cursor: pointer}
