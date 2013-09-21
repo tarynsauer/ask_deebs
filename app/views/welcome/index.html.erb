@@ -23,7 +23,7 @@
           <p>You have no questions.</p>
         <% else %>
           <% @user.questions.each do |question| %>
-            <li> <%= link_to question.content, question %></li>
+            <li> <%= link_to question.title, question %></li>
           <% end %>
         <% end %>
       </ul>
@@ -37,6 +37,12 @@
       :object => @answers    %>
 </div>
 
+<h2>Tags</h2>
+<div id='tagCloud'>
+  <% @tags.each do |tag| %>
+    <%= link_to tag.name, tag, data: { count: tag.taggings_count} %>
+  <% end %>
+</div>
 
 
 

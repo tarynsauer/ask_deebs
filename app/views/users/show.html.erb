@@ -8,7 +8,7 @@
   <ul>
   <% @user.questions.each do |question| %>
     <li>
-      <%= link_to question.content, question %>
+      <%= link_to question.title, question %>
     </li>
   <% end %>
   </ul>
@@ -21,7 +21,7 @@
 <% unless @user.followed_questions.empty? %>
   <ul>
     <% @user.followed_questions.each do |question| %>
-      <li><%= link_to question.content, question %></li>
+      <li><%= link_to question.title, question %></li>
     <% end %>
   </ul>
 <% else %>
