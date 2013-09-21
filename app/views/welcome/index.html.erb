@@ -5,10 +5,13 @@
   <%= @user.email %>
   <% end %>
 
-<h3><%= link_to "Ask A Question", new_question_path %></h3>
+<% if logged_in? %>
+  <h3 class="ask-question"><%= link_to "Ask A Question", new_question_path %></h3>
+<% else %>
+  <h4> <a class='sign-in' href='/signin'>Sign In to Ask a Question</a> </h4>
+<% end %>
 
-
-<%= form_tag root_path, :method => 'get' do %>
+<%= form_tag root_path, :method => 'get', class: "search" do %>
 <p>
     <%= text_field_tag :search, params[:search] %>
     <%= submit_tag "Search", :name => nil %>
@@ -28,7 +31,7 @@
         <% end %>
       <% end %>
     </ul>
-    
+
 <% end %>
 
 <h2>All Questions</h2>
@@ -38,6 +41,19 @@
     <li> <%= link_to question.content, question %></li>
   <% end %>
 </ul>
+
+<% if @answers %>
+  <h2>Answer Matches</h2>
+
+  <ul class="answer_list">
+    <% @answers.each do |answer| %>
+      <li> <%= answer.content %></li>      
+    <% end %>
+  </ul>
+
+<% end %>
+
+
 
 <h2>Tags</h2>
 <div id='tagCloud'>

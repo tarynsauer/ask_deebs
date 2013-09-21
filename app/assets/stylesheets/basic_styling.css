@@ -162,6 +162,10 @@ div#api-docs a.section-anchor {
   height: 0;
 }
 
+div #tagCloud {
+  width:300px;
+}
+
 h1{
 
   font-family: 'Montserrat', sans-serif;

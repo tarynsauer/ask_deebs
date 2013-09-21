@@ -1,18 +1,40 @@
 $(document).ready(function () {
     $( ".vote_down" ).click(function( event ) {
-        var questionId = $(this).attr( "data-question" );
+        event.preventDefault();
+
+        var questionId = $(this).attr( "data_question" );
         var answerId = $(this).attr( "id" );
-        var url = '/vote_down';
-        var data = { answer_id: answerId, like: false, question_id: questionId};
-            console.log(data);
-            $.post( url, data, function( response ) {
+        var data = { answer_id: answerId, like: 'false', question_id: questionId };
+            console.log(data)
+            $.get( '/vote', data, function( response ) {
+              console.log(response)
+              $('.count-' + response.answer_id).html('LIKES: ' + response.count);
+            });
+    });
+
+    $( ".vote_up" ).click(function( event ) {
+        event.preventDefault();
+
+        var questionId = $(this).attr( "data_question" );
+        var answerId = $(this).attr( "id" );
+        var data = { answer_id: answerId, like: 'true', question_id: questionId };
+                console.log(data);
+            $.get( '/vote', data, function( response ) {
               console.log(response);
-              // $(this).( ".count" ).html( data );
+              $('.count-' + response.answer_id).html('LIKES: ' + response.count);
             });
 
 
     });
 });
 
-        // <span class="vote_up" data-question=<%="#{@question.id}"%> id=<%="#{answer.id}"%>>Vote Up</span>
-        // <span class="vote_down" data-question=<%="#{@question.id}"%> id=<%="#{answer.id}"%>>Vote Down</span>
+
+$(document).ready(function(){
+  $('h3.ask-question').on("click", function(event){
+    event.preventDefault();
+    $.get("/questions/new", function(data) {
+      $('h3.ask-question').hide();
+      $('form.search').before(data);
+    });
+  });
+});
