@@ -20,6 +20,10 @@ class QuestionsController < ApplicationController
     end
   end
 
+  def edit
+    @question = params[:id]
+  end
+
   def create
     if current_user
       @user = current_user

@@ -1,0 +1,11 @@
+<%= form_for @question do |f| %>
+  <p>
+    <%= f.label "What's your question?" %><br>
+    <%= f.text_area :content, :placeholder => "What is the best book on learning TDD?" %>
+  </p>
+  <p>
+    <%= f.label :tags %>
+    <%= f.text_field :tags, :value => "", :placeholder => "javascript, ruby, etc." %>
+  </p>
+  <%= f.submit %>
+<% end %>
