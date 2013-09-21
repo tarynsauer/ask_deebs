@@ -10,7 +10,11 @@
   </p>
   <p>
     <%= f.label :tags %>
-    <%= f.text_field :tags, :value => "", :placeholder => "javascript, ruby, etc." %>
+    <% if @tags %>
+      <%= f.text_field :tags, :value => "#{@tags}", :placeholder => "javascript, ruby, etc." %>
+    <% else %>
+      <%= f.text_field :tags, :value => "", :placeholder => "javascript, ruby, etc." %>
+    <% end %>
   </p>
   <%= f.submit %>
 <% end %>

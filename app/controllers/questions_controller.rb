@@ -21,7 +21,8 @@ class QuestionsController < ApplicationController
   end
 
   def edit
-    @question = params[:id]
+    @question = Question.find(params[:id])
+    @tags = @question.tags.map { |tag| tag.name }.join(",")
   end
 
   def create
