@@ -37,6 +37,13 @@ class AnswersController < ApplicationController
     redirect_to @question
   end
 
+  def destroy
+    @question = Question.find(params[:question_id])
+    @answer = Answer.find(params[:id])
+    @answer.destroy
+    redirect_to @question
+  end
+
   def vote
     vote = Vote.find_or_create_by_user_id_and_answer_id(user_id: session[:user_id], answer_id: params[:answer_id], like: params[:like])
     vote.update(like: params[:like])

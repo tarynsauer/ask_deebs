@@ -3,6 +3,7 @@
 
   <%= link_to 'Edit', [:edit, @question, answer], :id => "answer_edit_#{answer.id}" %>
 
+  <%= link_to 'Delete', [@question, answer], :method => :delete, :id => "answer_delete_#{answer.id}" %>
 </p>
 
   <span class=<%="count-#{answer.id}"%>>LIKES: <%=answer.count_total_likes %></span>
