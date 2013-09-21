@@ -8,6 +8,9 @@
   <% @user.questions.each do |question| %>
     <li>
       <%= link_to question.content, question %>
+      <% if my_profile? %>
+        <%= link_to "Edit", edit_question_path(question) %>
+      <% end %>
     </li>
   <% end %>
   </ul>
