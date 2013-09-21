@@ -43,9 +43,10 @@ $(document).ready(function(){
     formContent = $('textarea#answer_content').val();
     data = { answer : { content : formContent } }
     formUrl = $('form#new_answer').attr('action');
-    $.post(formUrl, data, function(response){
-      $('ul.answers').after(response);
-    });
+    $.post(formUrl, data, function(success){
+      console.log(success);
+      $('ul.answers').prepend(success);
+    }, "html");
   });
 });
 
