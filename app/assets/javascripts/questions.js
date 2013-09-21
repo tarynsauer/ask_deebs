@@ -34,6 +34,7 @@ $(document).ready(function(){
     $('form#new_answer').submit(function(event){
         event.preventDefault();
         formContent = $('textarea#answer_content').val();
+        $('textarea#answer_content').val("")
         data = { answer : { content : formContent } }
         formUrl = $('form#new_answer').attr('action');
         $.post(formUrl, data, function(success){
