@@ -23,7 +23,8 @@ class QuestionsController < ApplicationController
   def create
     if current_user
       @user = current_user
-      @question = @user.questions.new(content: params[:question][:content])
+      @question = @user.questions.new(title: params[:question][:title], 
+                                      content: params[:question][:content])
       if @question.save
         @question.tags = params[:question][:tags]
         redirect_to @question
