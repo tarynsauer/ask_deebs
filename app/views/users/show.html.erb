@@ -1,5 +1,6 @@
 
 <h2>User Profile</h2>
+<%= image_tag @user.avatar_url, size: "100x100" %>
 <h2><%= @user.email %></h2>
 
 <h3>Your Questions</h3>
@@ -7,7 +8,7 @@
   <ul>
   <% @user.questions.each do |question| %>
     <li>
-      <%= link_to question.content, question %>
+      <%= link_to question.title, question %>
       <% if my_profile? %>
         <%= link_to "Edit", edit_question_path(question) %>
       <% end %>
@@ -23,7 +24,7 @@
 <% unless @user.followed_questions.empty? %>
   <ul>
     <% @user.followed_questions.each do |question| %>
-      <li><%= link_to question.content, question %></li>
+      <li><%= link_to question.title, question %></li>
     <% end %>
   </ul>
 <% else %>
