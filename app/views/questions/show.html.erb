@@ -26,17 +26,17 @@ Tags:
 <% unless @question.answers.empty? %>
   <ul>
     <% @answers_sorted.each do |answer| %>
-      <li> <%= answer.content %> | <span>LIKES: <%=answer.count_total_likes %></span>
+      <li> <%= answer.content %> | <span class=<%="count-#{answer.id}"%>>LIKES: <%=answer.count_total_likes %></span>
       <% if current_user %>
-        <%= link_to "Vote Up", vote_up_path(:answer_id => answer.id, :question_id => @question.id), method: :post  %> /
-        <%= link_to "Vote Down", vote_down_path(:answer_id => answer.id, :question_id => @question.id), method: :post  %>
+          <%= link_to "Vote Up", vote_path(:answer_id => answer.id, :question_id => @question.id), :data_question => "#{@question.id}", :id => "#{answer.id}", :class => "vote_up" %> /
+        <%= link_to "Vote Down", vote_path(:answer_id => answer.id, :question_id => @question.id), :data_question => "#{@question.id}", :id => "#{answer.id}", :class => "vote_down" %>
       <% end %>
       </li>
     <% end %>
   </ul>
 <% end %>
 
-<% if current_user %>
+<% if current_user && (current_user != @question.user) %>
   <% if is_following?(@question.id) %>
     <%= link_to "Stop following this Question", question_unfollow_path, options = { :method => :post } %>
   <% else %>

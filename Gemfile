@@ -46,6 +46,7 @@ end
 gem 'dbc-ruby'
 gem 'oauth2'
 gem 'json'
+
 # Use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
 
