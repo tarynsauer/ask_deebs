@@ -1,0 +1,20 @@
+<%= form_for @question do |f| %>
+  <%= f.label "What's your question?" %>
+  <p>
+    <%= f.label "Title" %>
+    <%= f.text_field :title, :placeholder => "What is the best book on learning TDD?"%>
+  </p>
+  <p>
+    <%= f.label "Content" %>
+    <%= f.text_area :content %>
+  </p>
+  <p>
+    <%= f.label :tags %>
+    <% if @tags %>
+      <%= f.text_field :tags, :value => "#{@tags}", :placeholder => "javascript, ruby, etc." %>
+    <% else %>
+      <%= f.text_field :tags, :value => "", :placeholder => "javascript, ruby, etc." %>
+    <% end %>
+  </p>
+  <%= f.submit %>
+<% end %>

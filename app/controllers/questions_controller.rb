@@ -19,6 +19,11 @@ class QuestionsController < ApplicationController
     end
   end
 
+  def edit
+    @question = Question.find(params[:id])
+    @tags = @question.tags.map { |tag| tag.name }.join(",")
+  end
+
   def create
     if current_user
       @user = current_user

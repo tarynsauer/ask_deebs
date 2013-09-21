@@ -8,8 +8,13 @@ class ApplicationController < ActionController::Base
     @current_user ||= User.find(session[:user_id]) if session[:user_id]
   end
 
+  def my_profile?
+    current_user.id == params[:id].to_i
+  end
+
   helper_method :current_user 
   helper_method :logged_in?
+  helper_method :my_profile?
 
   # Prevent CSRF attacks by raising an exception.
   # For APIs, you may want to use :null_session instead.
