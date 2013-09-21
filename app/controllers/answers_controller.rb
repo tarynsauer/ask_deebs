@@ -25,7 +25,7 @@ class AnswersController < ApplicationController
     @question = Question.find(params[:question_id])
     @answer = Answer.find(params[:id])
     if request.xhr?
-
+      render "edit", layout: false, :locals => {answer: @answer}
     else
 
     end
