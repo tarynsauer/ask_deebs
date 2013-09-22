@@ -25,10 +25,6 @@ $(document).ready(function () {
         });
     });
 
-    $(".vote_info").on(load, function(){
-      
-    });
-
 });
 
 $(document).ready(function(){
@@ -52,3 +48,19 @@ $(document).ready(function(){
     });
 });
 
+
+
+var userVotes = function(){
+    var voteArray = $('.vote_info');
+    $.each(voteArray, function(){
+        if ( $(this).data('like') === true ) {
+            $(this).find('a:first img').addClass('up_active');
+        }
+        else if ( $(this).data('like') === false ) {
+            $(this).find('a:nth-child(2) img').addClass('down_active');
+        }
+    }); 
+}
+
+$(document).ready(userVotes);
+$(document).on("page:load", userVotes);
