@@ -4,15 +4,16 @@ class WelcomeController < ApplicationController
     @user = current_user
 
     if request.xhr?
-      #show all questions on page load
-      @questions = Question.search(params[:search])
-
-      #only show answers if searched for
-      params[:search].blank? ? @answers = nil : @answers = Answer.search(params[:search])
-
+      if params[:search].blank?
+        @questions = Question.limit(20).order("created_at DESC")
+        @answers = nil 
+      else
+        @questions = Question.search(params[:search]).order("created_at DESC")
+        @answers = Answer.search(params[:search]).order("created_at DESC")
+      end
       render :partial => "live_search", :layout => false
     else
-      @questions = Question.all
+      @questions = Question.limit(20).order("created_at DESC")
     end
   end
 end
