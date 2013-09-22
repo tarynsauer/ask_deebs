@@ -1,9 +1,4 @@
 <div id="index-top">
-  <%if current_user %>
-    <%= link_to @user.name, @user %>
-    <%= @user.email %>
-  <% end %>
-
 
   <% if logged_in? %>
     <h3 class="ask-question"><%= link_to "Ask A Question", new_question_path %></h3>
@@ -32,20 +27,8 @@
 <h2>All Questions</h2>
 
 <div id="live-search">
-  <%= render "live_search", 
-      :object => @questions, 
+  <%= render "live_search",
+      :object => @questions,
       :object => @answers    %>
 </div>
-
-<h2>Tags</h2>
-<div id='tagCloud'>
-  <% @tags.each do |tag| %>
-    <%= link_to tag.name, tag, data: { count: tag.taggings_count} %>
-  <% end %>
-</div>
-
-
-
-
-
 

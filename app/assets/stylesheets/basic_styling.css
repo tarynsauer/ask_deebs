@@ -6,7 +6,6 @@
 }
 
 header .container{
-
   padding: 10px 20px;
 }
 
@@ -14,16 +13,24 @@ header .container{
   margin: 0 auto;
 }
 
-header {
-  width: 100%;
-  min-height: 100px;
-  max-height: 92px;
-  background: rgba(255,255,255,.96);
-  position: fixed;
-  top: 0;
-  left: 0;
-  border-bottom: 1px solid rgba(0,0,0,.35);
-  z-index: 50;
+.sidebar {
+  width: 20%;
+  float: left;
+  margin-top: 120px;
+  margin-left: 5%;
+  padding-right: 10px;
+}
+
+header{
+width: 100%;
+min-height: 100px;
+max-height: 92px;
+background: rgba(255,255,255,.96);
+position: fixed;
+top: 0;
+left: 0;
+border-bottom: 1px solid rgba(0,0,0,.35);
+z-index: 50;
 }
 
 .header-logo {
@@ -67,8 +74,7 @@ nav ul a.sign-in {
   color: #fff;
   padding: 5px 20px;
   text-align: center;
-
-  background: linear-gradient(to bottom,#ef5344 0%,#e64a3b 100%);
+  background-color: #CE3A0F;
   border: 1px solid #b03b30;
   -moz-border-radius: 3px;
 
@@ -84,34 +90,11 @@ nav ul a.sign-in {
 }
 
 .content {
-  margin-top: 100px;
-  margin-left: 200px;
+  margin-top: 120px;
+  margin-left: 5%;
+  width: 55%;
+  float: left;
 }
-
-div#fullcontainer div#displays {
-  box-shadow: #0f131a -1px 0 0, rgba(0,0,0,0.5) 1px 0 2px inset;
-  background-color: #292e33;
-  margin-left: 50%;
-  position: relative;
-}
-
-div#fullcontainer div#displays .display:first-child .display-section {
-  padding-top: 100px;
-}
-
-
-div#fullcontainer div#displays .method-section {
-  clear: left;
-  font-size: 13px;
-  line-height: 1.9em;
-  margin-left: -100%;
-  padding-top: 0;
-  position: relative;
-  border-bottom: 1px solid #adbfd9;
-  overflow: hidden;
-  padding-bottom: 45px;
-}
-
 
 p {
   display: block;
@@ -119,38 +102,6 @@ p {
   -webkit-margin-after: 1em;
   -webkit-margin-start: 0px;
   -webkit-margin-end: 0px;
-}
-
-div#guide.stick {
-  left: 0;
-  position: fixed;
-  top: 0;
-}
-
-div#guide {
-  background: white;
-  border-right: 1px solid #dadfe5;
-  bottom: 0;
-  left: 0;
-  overflow: hidden;
-  position: absolute;
-  top: 50px;
-  width: 200px;
-  z-index: 25;
-  margin-top: 100px;
-}
-
-div#guide p.ref-title {
-  color: #7a8e99;
-  font-size: 11px;
-  font-weight: bold;
-  padding: 24px 20px 6px;
-  font-family: 'Montserrat', sans-serif;
-
-}
-
-div#guide p.ref-title:first-child {
-  padding-top: 0;
 }
 
 div#fullcontainer {
@@ -169,8 +120,17 @@ div #tagCloud {
   width:300px;
 }
 
+body{
+  font-family: 'Montserrat', sans-serif;
+}
+
 h1{
   font-family: 'Montserrat', sans-serif;
+}
+
+h2{
+  color: #96280B;
+  font-size: 1.2em;
 }
 
 li{
@@ -188,7 +148,15 @@ li a{
   color: #262626;
 }
 
-.vote_down, .vote_up {cursor: pointer}
+.container nav {
+  position: absolute;
+  top: 30px;
+  right: 30px;
+}
+
+.vote_down, .vote_up {
+  cursor: pointer;
+}
 
 .list_gravatars {
   width: 20px;
@@ -198,6 +166,7 @@ li a{
 .profile_gravatar {
   width: 100px;
   height: 100px;
+  border: 1px solid #96280B;
 }
 
 #tagCloud a {

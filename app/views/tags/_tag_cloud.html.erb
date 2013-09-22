@@ -1,0 +1,7 @@
+<h2>Tags</h2>
+  <% @tags = Tag.order("taggings_count DESC") %>
+<div id='tagCloud'>
+  <% @tags.each do |tag| %>
+    <%= link_to tag.name, tag, data: { count: tag.taggings_count} %>
+  <% end %>
+</div>
