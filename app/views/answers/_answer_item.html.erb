@@ -13,8 +13,8 @@
 
 <div class="vote_info">
   <% if current_user %>
-    <%= link_to image_tag('up_gray.png'), vote_path(:answer_id => answer.id, :question_id => @question.id), :data_question => "#{@question.id}", :id => "#{answer.id}", :class => "vote_up" %>
-    <%= link_to image_tag('down_gray.png'), vote_path(:answer_id => answer.id, :question_id => @question.id), :data_question => "#{@question.id}", :id => "#{answer.id}", :class => "vote_down" %>
+    <%= link_to image_tag('', class: "up_inactive"), vote_path(:answer_id => answer.id, :question_id => @question.id), :data_question => "#{@question.id}", :id => "#{answer.id}", :class => "vote_up" %>
+    <%= link_to image_tag('', class: "down_inactive"), vote_path(:answer_id => answer.id, :question_id => @question.id), :data_question => "#{@question.id}", :id => "#{answer.id}", :class => "vote_down" %>
   <% end %>
 </div>
 </li>

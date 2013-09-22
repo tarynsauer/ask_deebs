@@ -199,3 +199,35 @@ li a{
   width: 100px;
   height: 100px;
 }
+
+/* Vote Arrows */
+
+
+.up_inactive {
+  content:url('/assets/up_gray.png');
+}
+
+.up_active {
+  content:url('/assets/up_blue.png');
+}
+
+.down_inactive {
+  content:url('/assets/down_gray.png');
+}
+
+.down_active {
+  content:url('/assets/down_blue.png');
+}
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,7 +1,7 @@
 $(document).ready(function () {
   $( ".vote_down" ).click(function( event ) {
       event.preventDefault();
-
+      $(this).find('img').addClass("down_active");
       var questionId = $(this).attr( "data_question" );
       var answerId = $(this).attr( "id" );
       var data = { answer_id: answerId, like: 'false', question_id: questionId };
@@ -12,7 +12,7 @@ $(document).ready(function () {
 
     $( ".vote_up" ).click(function( event ) {
         event.preventDefault();
-
+        $(this).find('img').addClass("up_active");
         var questionId = $(this).attr( "data_question" );
         var answerId = $(this).attr( "id" );
         var data = { answer_id: answerId, like: 'true', question_id: questionId };
