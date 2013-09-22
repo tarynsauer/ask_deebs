@@ -1,5 +1,5 @@
-$(document).ready(function(){
-    $("#search").bind("keyup", function() {
+var liveSearch = function() {
+    $("#search_field").bind("keyup", function() {
         var url = $("#search_form").attr("action")
         var data = $("#search_form").serialize();
 
@@ -7,5 +7,8 @@ $(document).ready(function(){
             $("#live-search").html(response);
         });
     });
-})
+};
+
+$(document).ready(liveSearch);
+$(document).on('page:load', liveSearch);
 

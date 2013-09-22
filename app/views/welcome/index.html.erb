@@ -7,16 +7,17 @@
   <% end %>
 
   <%= form_tag root_path, :id => "search_form", :method => 'get', class: "search" do %>
-      <%= text_field_tag :search, params[:search] %>
-      <%= submit_tag "Search", :name => nil %>
+      <%= text_field_tag :search, params[:search], :id => "search_field" %>
+      <%= submit_tag "Search", :class => "submitButton", :name => nil %>
   <% end %>
 
   <% if current_user %>
-    <h2>Your Questions</h2>
-      <ul>
+    <h2>Your questions</h2>
         <% if @user.questions.empty? %>
           <p>You have no questions.</p>
         <% else %>
+      <ul class="userQuestions">
+
           <% @user.questions.each do |question| %>
             <li> <%= link_to question.title, question %></li>
           <% end %>
@@ -29,6 +30,6 @@
 <div id="live-search">
   <%= render "live_search",
       :object => @questions,
-      :object => @answers    %>
+      :object => @answers %>
 </div>
 

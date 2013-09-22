@@ -11,10 +11,10 @@
 
   <span class=<%="count-#{answer.id}"%>>LIKES: <%=answer.count_total_likes %></span>
 
-<div class="vote_info">
+<div class="vote_info" data-like=<%= "#{i_like?(answer)}" %>>
   <% if current_user %>
-    <%= link_to "Vote Up", vote_path(:answer_id => answer.id, :question_id => @question.id), :data_question => "#{@question.id}", :id => "#{answer.id}", :class => "vote_up" %> /
-    <%= link_to "Vote Down", vote_path(:answer_id => answer.id, :question_id => @question.id), :data_question => "#{@question.id}", :id => "#{answer.id}", :class => "vote_down" %>
+    <%= link_to image_tag('', class: "up_inactive"), vote_path(:answer_id => answer.id, :question_id => @question.id), :data_question => "#{@question.id}", :id => "#{answer.id}", :class => "vote_up" %>
+    <%= link_to image_tag('', class: "down_inactive"), vote_path(:answer_id => answer.id, :question_id => @question.id), :data_question => "#{@question.id}", :id => "#{answer.id}", :class => "vote_down" %>
   <% end %>
 </div>
 </li>

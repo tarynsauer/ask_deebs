@@ -1,29 +1,30 @@
 <h2><%= @question.title %></h2>
 <p><%= @question.content%></p>
 <p><%= @question.created_at %></p>
-Tags:
-<ul>
-  <% @question.tags.each do |tag| %>
-    <li>
-      <%= link_to tag.name, tag %>
-    </li>
-  <% end %>
-</ul>
-
+<% unless @tags.empty? %>
+<strong>Tags:</strong>
+  <ul class="tagsList">
+    <% @tags.each do |tag| %>
+      <li>
+        <%= link_to tag.name, tag %>
+      </li>
+    <% end %>
+  </ul>
+<% end %>
 
 <%= form_for [@question, Answer.new] do |f| %>
 
 <p>
-  <%= f.label :content %> <br>
+  <strong><%= f.label "Your answer:" %></strong> <br>
   <%= f.text_area :content %>
 </p>
 
 <p>
-  <%= f.submit %>
+  <%= f.submit "Submit", :class => "submitButton" %>
 </p>
 
 <% end %>
-
+<h3 class="answersList">All answers:</h3>
 <ul class="answers">
   <% unless @question.answers.empty? %>
       <% @answers_sorted.each do |answer| %>
