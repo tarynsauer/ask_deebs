@@ -2,7 +2,8 @@ var voteDown = function() {
   $( ".vote_down" ).click(function( event ) {
       event.preventDefault();
 
-      $(this).find('img').addClass("down_active");
+      $(this).find('img').toggleClass("down_active");
+      $('.vote_up img').toggleClass("up_active");
 
       var questionId = $(this).attr( "data_question" );
       var answerId = $(this).attr( "id" );
@@ -17,7 +18,8 @@ var voteUp = function() {
   $( ".vote_up" ).click(function( event ) {
         event.preventDefault();
 
-        $(this).find('img').addClass("up_active");
+        $(this).find('img').toggleClass("up_active");
+        $('.vote_down img').toggleClass("down_active");
 
         var questionId = $(this).attr( "data_question" );
         var answerId = $(this).attr( "id" );
@@ -73,7 +75,7 @@ var userVotes = function(){
         else if ( $(this).data('like') === false ) {
             $(this).find('a:nth-child(2) img').addClass('down_active');
         }
-    }); 
+    });
 }
 
 $(document).ready(userVotes);
