@@ -120,8 +120,17 @@ div #tagCloud {
   width:300px;
 }
 
+body{
+  font-family: 'Montserrat', sans-serif;
+}
+
 h1{
   font-family: 'Montserrat', sans-serif;
+}
+
+h2{
+  color: #96280B;
+  font-size: 1.2em;
 }
 
 li{
@@ -157,4 +166,5 @@ li a{
 .profile_gravatar {
   width: 100px;
   height: 100px;
+  border: 1px solid #96280B;
 }
