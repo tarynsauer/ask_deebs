@@ -6,12 +6,19 @@
 }
 
 header .container{
-
   padding: 10px 20px;
 }
 
 .container {
   margin: 0 auto;
+}
+
+.sidebar {
+  width: 25%;
+  float: left;
+  margin-top: 120px;
+  margin-right: 5%;
+  margin-left: 5%;
 }
 
 header{
@@ -81,34 +88,11 @@ nav ul a.sign-in {
 }
 
 .content {
-  margin-top: 100px;
-  margin-left: 200px;
+  margin-top: 120px;
+  margin-left: 5%;
+  width: 60%;
+  float: left;
 }
-
-div#fullcontainer div#displays {
-  box-shadow: #0f131a -1px 0 0, rgba(0,0,0,0.5) 1px 0 2px inset;
-  background-color: #292e33;
-  margin-left: 50%;
-  position: relative;
-}
-
-div#fullcontainer div#displays .display:first-child .display-section {
-  padding-top: 100px;
-}
-
-
-div#fullcontainer div#displays .method-section {
-  clear: left;
-  font-size: 13px;
-  line-height: 1.9em;
-  margin-left: -100%;
-  padding-top: 0;
-  position: relative;
-  border-bottom: 1px solid #adbfd9;
-  overflow: hidden;
-  padding-bottom: 45px;
-}
-
 
 p {
   display: block;
@@ -116,38 +100,6 @@ p {
   -webkit-margin-after: 1em;
   -webkit-margin-start: 0px;
   -webkit-margin-end: 0px;
-}
-
-div#guide.stick {
-  left: 0;
-  position: fixed;
-  top: 0;
-}
-
-div#guide {
-  background: white;
-  border-right: 1px solid #dadfe5;
-  bottom: 0;
-  left: 0;
-  overflow: hidden;
-  position: absolute;
-  top: 50px;
-  width: 200px;
-  z-index: 25;
-  margin-top: 100px;
-}
-
-div#guide p.ref-title {
-  color: #7a8e99;
-  font-size: 11px;
-  font-weight: bold;
-  padding: 24px 20px 6px;
-  font-family: 'Montserrat', sans-serif;
-
-}
-
-div#guide p.ref-title:first-child {
-  padding-top: 0;
 }
 
 div#fullcontainer {
@@ -188,4 +140,12 @@ li a{
   color: #262626;
 }
 
-.vote_down, .vote_up {cursor: pointer}
+.container nav {
+  position: absolute;
+  top: 30px;
+  right: 30px;
+}
+
+.vote_down, .vote_up {
+  cursor: pointer;
+}
