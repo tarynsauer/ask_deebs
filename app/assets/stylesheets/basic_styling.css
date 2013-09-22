@@ -66,8 +66,13 @@ nav ul li {
 }
 
 nav ul a {
-  color: #7f8081;
+  color: gray;
   text-decoration: none;
+}
+
+nav ul a:hover {
+  color: #2E2E2E;
+  text-decoration: underline;
 }
 
 nav ul a.sign-in {
@@ -205,8 +210,38 @@ li a{
 #answer_content, #question_content {
   width: 75%;
   height: 70px;
+  font-size: 1em;
+}
+
+#question_title, #question_tags, #search_field {
+  width: 50%;
+  height: 28px;
+  font-size: 1em;
 }
 
 .hidden {
   display: none;
+}
+
+.ask-question a {
+  color: gray;
+  text-decoration: none;
+}
+.ask-question a:hover {
+  color: #2E2E2E;
+  text-decoration: underline;
+}
+
+.submitButton
+{
+padding: 8px 12px 9px !important;
+font-size: 16px !important;
+background-color: #2E2E2E;
+font-weight: bold;
+color: #ffffff;
+border-radius: 5px;
+-moz-border-radius: 5px;
+-webkit-border-radius: 5px;
+border: 1px solid #464646;
+cursor: pointer;
 }
