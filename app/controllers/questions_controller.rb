@@ -27,7 +27,7 @@ class QuestionsController < ApplicationController
   def create
     if current_user
       @user = current_user
-      @question = @user.questions.new(title: params[:question][:title], 
+      @question = @user.questions.new(title: params[:question][:title],
                                       content: params[:question][:content])
       if @question.save
         @question.tags = params[:question][:tags]
@@ -50,6 +50,11 @@ class QuestionsController < ApplicationController
     @question = Question.find(params[:id])
     current_user.followed_questions.delete(@question)
     redirect_to @question
+  end
+
+  def destroy
+    Question.find(params[:id]).destroy
+    redirect_to current_user
   end
 
 end
