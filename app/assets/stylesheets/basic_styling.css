@@ -96,10 +96,25 @@ nav ul a.sign-in {
   float: left;
 }
 
-ul.question_list, ul.userQuestions {
+ul.question_list, ul.userQuestions, ul.answers {
   margin: 0;
   padding: 0;
   list-style-type: none;
+}
+
+ul.tagsList {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+}
+
+h3.label {
+  display: inline;
+}
+
+ul.tagsList li {
+  display: inline;
+  margin-right: 5px;
 }
 
 p {
@@ -136,11 +151,11 @@ h1{
 
 h2{
   color: #96280B;
-  font-size: 1.3em;
+  font-size: 1.35em;
 }
 
 h3{
-  font-size: 1.1em;
+  font-size: 1.15em;
 }
 
 li{
@@ -181,4 +196,8 @@ li a{
 
 #tagsHeader {
   color: #7F8081;
+}
+
+.answersList {
+  margin-top: 40px;
 }
