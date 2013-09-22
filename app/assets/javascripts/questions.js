@@ -2,8 +2,8 @@ var voteDown = function() {
   $( ".vote_down" ).click(function( event ) {
       event.preventDefault();
 
-      $(this).find('img').toggleClass("down_active");
-      $('.vote_up img').toggleClass("up_active");
+      $(this).find('img').removeClass("down_inactive").addClass("down_active");
+      $(this).parent().find('img').first().removeClass("up_active").addClass("up_inactive");
 
       var questionId = $(this).attr( "data_question" );
       var answerId = $(this).attr( "id" );
@@ -18,8 +18,8 @@ var voteUp = function() {
   $( ".vote_up" ).click(function( event ) {
         event.preventDefault();
 
-        $(this).find('img').toggleClass("up_active");
-        $('.vote_down img').toggleClass("down_active");
+        $(this).find('img').removeClass("up_inactive").addClass("up_active");
+        $(this).next().find('img').removeClass("down_active").addClass("down_inactive");
 
         var questionId = $(this).attr( "data_question" );
         var answerId = $(this).attr( "id" );
@@ -53,30 +53,31 @@ var newAnswer = function() {
     });
 }
 
+var userVotes = function(){
+    var voteArray = $('.vote_info');
+    $.each(voteArray, function(){
+        if ( $(this).data('like') === true ) {
+            $(this).find('a:first img').removeClass('up_inactive').addClass('up_active');
+        }
+        else if ( $(this).data('like') === false ) {
+            $(this).find('a:nth-child(2) img').removeClass('down_inactive').addClass('down_active');
+        }
+    });
+}
+
 $(document).ready(voteDown);
 $(document).ready(voteUp);
 $(document).ready(askQuestion);
 $(document).ready(newAnswer);
+$(document).ready(userVotes);
 
 $(document).on('page:load', voteDown);
 $(document).on('page:load', voteUp);
 $(document).on('page:load', askQuestion);
 $(document).on('page:load', newAnswer);
-
-
-
-
-var userVotes = function(){
-    var voteArray = $('.vote_info');
-    $.each(voteArray, function(){
-        if ( $(this).data('like') === true ) {
-            $(this).find('a:first img').addClass('up_active');
-        }
-        else if ( $(this).data('like') === false ) {
-            $(this).find('a:nth-child(2) img').addClass('down_active');
-        }
-    });
-}
-
-$(document).ready(userVotes);
 $(document).on("page:load", userVotes);
+
+
+
+
+
