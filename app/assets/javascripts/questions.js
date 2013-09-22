@@ -2,6 +2,8 @@ var voteDown = function() {
   $( ".vote_down" ).click(function( event ) {
       event.preventDefault();
 
+      $(this).find('img').addClass("down_active");
+
       var questionId = $(this).attr( "data_question" );
       var answerId = $(this).attr( "id" );
       var data = { answer_id: answerId, like: 'false', question_id: questionId };
@@ -15,13 +17,15 @@ var voteUp = function() {
   $( ".vote_up" ).click(function( event ) {
         event.preventDefault();
 
+        $(this).find('img').addClass("up_active");
+
         var questionId = $(this).attr( "data_question" );
         var answerId = $(this).attr( "id" );
         var data = { answer_id: answerId, like: 'true', question_id: questionId };
             $.get( '/vote', data, function( response ) {
               $('.count-' + response.answer_id).html('LIKES: ' + response.count);
         });
-    });
+  });
 };
 
 var askQuestion = function() {
@@ -58,3 +62,19 @@ $(document).on('page:load', askQuestion);
 $(document).on('page:load', newAnswer);
 
 
+
+
+var userVotes = function(){
+    var voteArray = $('.vote_info');
+    $.each(voteArray, function(){
+        if ( $(this).data('like') === true ) {
+            $(this).find('a:first img').addClass('up_active');
+        }
+        else if ( $(this).data('like') === false ) {
+            $(this).find('a:nth-child(2) img').addClass('down_active');
+        }
+    }); 
+}
+
+$(document).ready(userVotes);
+$(document).on("page:load", userVotes);
