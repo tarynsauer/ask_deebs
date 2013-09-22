@@ -16,7 +16,7 @@ $(document).ready(function () {
         event.preventDefault();
 
         $(this).find('img').addClass("up_active");
-        
+
         var questionId = $(this).attr( "data_question" );
         var answerId = $(this).attr( "id" );
         var data = { answer_id: answerId, like: 'true', question_id: questionId };
@@ -24,6 +24,11 @@ $(document).ready(function () {
               $('.count-' + response.answer_id).html('LIKES: ' + response.count);
         });
     });
+
+    $(".vote_info").on(load, function(){
+      
+    });
+
 });
 
 $(document).ready(function(){
