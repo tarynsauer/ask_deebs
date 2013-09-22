@@ -1,7 +1,7 @@
 <div id="index-top">
 
   <% if logged_in? %>
-    <h3 class="ask-question"><%= link_to "Ask A Question", new_question_path %></h3>
+    <h2 class="ask-question"><%= link_to "Ask A Question", new_question_path %></h2>
   <% else %>
     <h4> <a class='sign-in' href='/signin'>Sign In to Ask a Question</a></h4>
   <% end %>
