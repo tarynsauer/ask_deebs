@@ -14,8 +14,8 @@
         <%= link_to image_tag('logo.png', class:'header-logo'), root_path %>
         <nav>
           <ul>
-            <li><%= link_to "Home", root_path %></li>
             <% if current_user %>
+              <li><%= link_to "Home", root_path %></li>
               <li><%= link_to "Profile", current_user %></li>
               <li><%= link_to "Logout", logout_path %></li>
             <% else %>
@@ -25,16 +25,11 @@
           </nav>
         </div>
     </header>
-    <div class = content>
-      <div id ="guide" class="stick">
-        <p class="ref-title">WELCOME</p>
-      </div>
-      <div id="fullcontainer">
-        <a id="top" name="top" class="section-anchor">&nbsp;</a>
-      </div>
-      <div id="displays">
-      </div>
+    <div class="content">
       <%= yield %>
+    </div>
+    <div class="sidebar">
+      <%= render "tags/tag_cloud", locals: {tags: @tags} %>
     </div>
   </div>
     <footer></footer>
