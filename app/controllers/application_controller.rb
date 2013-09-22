@@ -13,7 +13,7 @@ class ApplicationController < ActionController::Base
   end
 
   def my_answer?(answer)
-    current_user.id == answer.user_id
+    current_user.id == answer.user_id if logged_in?
   end
 
   helper_method :current_user
