@@ -1,4 +1,4 @@
-$(document).ready(function(){
+var editAnswer = function() {
     $('a.editAnswer').on("click", function(event){
         event.preventDefault();
         var url = $(this).attr('href');
@@ -11,4 +11,7 @@ $(document).ready(function(){
 
         }, "html");
     });
-});
+};
+
+$(document).ready(editAnswer);
+$(document).on('page:load', editAnswer);
