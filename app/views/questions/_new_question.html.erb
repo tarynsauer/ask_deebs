@@ -1,15 +1,15 @@
 <%= form_for @question do |f| %>
   <h2><%= f.label "What's your question?" %></h2>
   <p>
-    <%= f.label "Title" %>
+    <strong><%= f.label "Title:" %></strong>
     <%= f.text_field :title, :placeholder => "What is the best book on learning TDD?"%>
   </p>
   <p>
-    <%= f.label "Content" %>
+    <%= f.label "Content", :class => "hidden" %>
     <%= f.text_area :content %>
   </p>
   <p>
-    <%= f.label :tags %>
+    <strong><%= f.label "Tags:" %></strong>
     <% if @tags %>
       <%= f.text_field :tags, :value => "#{@tags}", :placeholder => "javascript, ruby, etc." %>
     <% else %>

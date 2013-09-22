@@ -201,3 +201,12 @@ li a{
 .answersList {
   margin-top: 40px;
 }
+
+#answer_content, #question_content {
+  width: 75%;
+  height: 70px;
+}
+
+.hidden {
+  display: none;
+}
