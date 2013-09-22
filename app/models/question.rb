@@ -21,7 +21,7 @@ class Question < ActiveRecord::Base
     if term
       where('lower(content) LIKE ? OR lower(title) LIKE ?', "%#{term.downcase}%", "%#{term.downcase}%")
     else
-      all
+      limit(20)
     end
   end
 
