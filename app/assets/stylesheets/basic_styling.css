@@ -96,6 +96,12 @@ nav ul a.sign-in {
   float: left;
 }
 
+ul.question_list, ul.userQuestions {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+}
+
 p {
   display: block;
   -webkit-margin-before: 1em;

@@ -16,7 +16,7 @@
         <% if @user.questions.empty? %>
           <p>You have no questions.</p>
         <% else %>
-      <ul>
+      <ul class="userQuestions">
 
           <% @user.questions.each do |question| %>
             <li> <%= link_to question.title, question %></li>

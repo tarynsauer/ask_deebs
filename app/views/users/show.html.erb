@@ -5,7 +5,7 @@
 
 <h3>Your questions:</h3>
 <% unless @user.questions.empty? %>
-  <ul>
+  <ul class="userQuestions">
   <% @user.questions.each do |question| %>
     <li>
       <%= link_to question.title, question %>
