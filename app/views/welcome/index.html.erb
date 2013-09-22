@@ -12,11 +12,12 @@
   <% end %>
 
   <% if current_user %>
-    <h2>Your Questions</h2>
-      <ul>
+    <h2>Your questions</h2>
         <% if @user.questions.empty? %>
           <p>You have no questions.</p>
         <% else %>
+      <ul>
+
           <% @user.questions.each do |question| %>
             <li> <%= link_to question.title, question %></li>
           <% end %>
@@ -24,11 +25,11 @@
       </ul>
   <% end %>
 </div>
-<h2>All Questions</h2>
+<h2>All questions</h2>
 
 <div id="live-search">
   <%= render "live_search",
       :object => @questions,
-      :object => @answers    %>
+      :object => @answers %>
 </div>
 
