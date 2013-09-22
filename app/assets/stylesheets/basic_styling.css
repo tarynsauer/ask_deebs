@@ -22,15 +22,15 @@ header .container{
 }
 
 header{
-width: 100%;
-min-height: 100px;
-max-height: 92px;
-background: rgba(255,255,255,.96);
-position: fixed;
-top: 0;
-left: 0;
-border-bottom: 1px solid rgba(0,0,0,.35);
-z-index: 50;
+  width: 100%;
+  min-height: 100px;
+  max-height: 92px;
+  background: rgba(255,255,255,.96);
+  position: fixed;
+  top: 0;
+  left: 0;
+  border-bottom: 1px solid rgba(0,0,0,.35);
+  z-index: 50;
 }
 
 .header-logo {
@@ -199,6 +199,15 @@ li a{
   border: 1px solid #96280B;
 }
 
+#tagCloud a {
+  text-decoration: none;
+  border: solid 1px #DADFE5;
+  padding: 1px 4px;
+  margin: 3px 2px;
+  border-bottom-right-radius: 15px;
+  border-top-right-radius: 15px;
+}
+
 #tagsHeader {
   color: #7F8081;
 }
@@ -250,4 +259,14 @@ cursor: pointer;
   background-color: #FAFFE3;
   margin: 5px 0;
   padding: 5px 5px;
+  padding: 8px 12px 9px !important;
+  font-size: 16px !important;
+  background-color: #2E2E2E;
+  font-weight: bold;
+  color: #ffffff;
+  border-radius: 5px;
+  -moz-border-radius: 5px;
+  -webkit-border-radius: 5px;
+  border: 1px solid #464646;
+  cursor: pointer;
 }
