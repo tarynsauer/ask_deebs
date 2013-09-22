@@ -1,11 +1,11 @@
 
-<h2>User Profile</h2>
+<h2>User profile</h2>
 <%= image_tag @user.avatar_url, :class => "profile_gravatar" %>
-<h2><%= @user.email %></h2>
+<p><%= @user.email %></p>
 
-<h3>Your Questions</h3>
+<h3>Your questions:</h3>
 <% unless @user.questions.empty? %>
-  <ul>
+  <ul class="userQuestions">
   <% @user.questions.each do |question| %>
     <li>
       <%= link_to question.title, question %>
@@ -17,13 +17,13 @@
   <% end %>
   </ul>
 <% else %>
-  <p>You have no questions</p>
+  <p>You have no questions.</p>
 <% end %>
 
 
 <h3>Following:</h3>
 <% unless @user.followed_questions.empty? %>
-  <ul>
+  <ul class="question_list">
     <% @user.followed_questions.each do |question| %>
       <li><%= link_to question.title, question %></li>
     <% end %>
