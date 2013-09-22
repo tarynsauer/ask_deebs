@@ -66,8 +66,13 @@ nav ul li {
 }
 
 nav ul a {
-  color: #7f8081;
+  color: gray;
   text-decoration: none;
+}
+
+nav ul a:hover {
+  color: #2E2E2E;
+  text-decoration: underline;
 }
 
 nav ul a.sign-in {
@@ -208,7 +213,7 @@ li a{
   font-size: 1em;
 }
 
-#question_title, #question_tags {
+#question_title, #question_tags, #search_field {
   width: 50%;
   height: 28px;
   font-size: 1em;
@@ -216,6 +221,15 @@ li a{
 
 .hidden {
   display: none;
+}
+
+.ask-question a {
+  color: gray;
+  text-decoration: none;
+}
+.ask-question a:hover {
+  color: #2E2E2E;
+  text-decoration: underline;
 }
 
 .submitButton
