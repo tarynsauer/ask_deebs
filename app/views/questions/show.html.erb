@@ -33,10 +33,12 @@
   <% end %>
 </ul>
 
-<% if current_user && (current_user != @question.user) %>
-  <% if is_following?(@question.id) %>
-    <%= link_to "Stop following this Question", question_unfollow_path, options = { :method => :post } %>
-  <% else %>
-    <%= link_to "Follow this Question", question_follow_path, options = { :method => :post } %>
+<div class=followStatus>
+  <% if current_user && (current_user != @question.user) %>
+    <% if is_following?(@question.id) %>
+      <%= link_to "Unfollow this question", question_unfollow_path, options = { :method => :post } %>
+    <% else %>
+      <%= link_to "Follow this question", question_follow_path, options = { :method => :post } %>
+    <% end %>
   <% end %>
-<% end %>
+</div>
