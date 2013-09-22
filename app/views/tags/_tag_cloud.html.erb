@@ -1,4 +1,4 @@
-<h2>Tags</h2>
+<h2 id="tagsHeader">Question tags</h2>
   <% @tags = Tag.order("taggings_count DESC") %>
 <div id='tagCloud'>
   <% @tags.each do |tag| %>

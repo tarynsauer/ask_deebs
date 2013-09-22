@@ -96,6 +96,27 @@ nav ul a.sign-in {
   float: left;
 }
 
+ul.question_list, ul.userQuestions, ul.answers {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+}
+
+ul.tagsList {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+}
+
+h3.label {
+  display: inline;
+}
+
+ul.tagsList li {
+  display: inline;
+  margin-right: 5px;
+}
+
 p {
   display: block;
   -webkit-margin-before: 1em;
@@ -130,7 +151,11 @@ h1{
 
 h2{
   color: #96280B;
-  font-size: 1.2em;
+  font-size: 1.35em;
+}
+
+h3{
+  font-size: 1.15em;
 }
 
 li{
@@ -169,6 +194,7 @@ li a{
   border: 1px solid #96280B;
 }
 
+
 /* Vote Arrows */
 
 
@@ -188,15 +214,22 @@ li a{
   content:url('/assets/down_blue.png');
 }
 
+/*   */
 
+#tagsHeader {
+  color: #7F8081;
+}
 
+.answersList {
+  margin-top: 40px;
+}
 
+#answer_content, #question_content {
+  width: 75%;
+  height: 70px;
+}
 
-
-
-
-
-
-
-
+.hidden {
+  display: none;
+}
 

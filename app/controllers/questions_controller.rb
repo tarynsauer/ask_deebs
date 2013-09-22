@@ -6,6 +6,7 @@ class QuestionsController < ApplicationController
 
   def show
     @question = Question.find(params[:id])
+    @tags = @question.tags
     @answers = @question.answers
     @answers_sorted = @answers.sort! {|x, y| y.count_total_likes <=> x.count_total_likes }
   end
