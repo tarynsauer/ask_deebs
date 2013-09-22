@@ -1,5 +1,5 @@
 var liveSearch = function() {
-    $("#search").bind("keyup", function() {
+    $("#search_field").bind("keyup", function() {
         var url = $("#search_form").attr("action")
         var data = $("#search_form").serialize();
 
