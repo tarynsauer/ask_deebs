@@ -199,3 +199,13 @@ li a{
   width: 100px;
   height: 100px;
 }
+
+#tagCloud a {
+  text-decoration: none;
+  border: solid 1px #DADFE5;
+  padding: 1px 4px;
+  margin: 2px 2px;
+  border-bottom-right-radius: 15px;
+  border-top-right-radius: 15px;
+;
+}
