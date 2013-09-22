@@ -199,6 +199,28 @@ li a{
   border: 1px solid #96280B;
 }
 
+
+/* Vote Arrows */
+
+
+.up_inactive {
+  content:url('/assets/up_gray.png');
+}
+
+.up_active {
+  content:url('/assets/up_blue.png');
+}
+
+.down_inactive {
+  content:url('/assets/down_gray.png');
+}
+
+.down_active {
+  content:url('/assets/down_blue.png');
+}
+
+/*   */
+
 #tagCloud a {
   text-decoration: none;
   border: solid 1px #DADFE5;
@@ -207,6 +229,7 @@ li a{
   border-bottom-right-radius: 15px;
   border-top-right-radius: 15px;
 }
+
 
 #tagsHeader {
   color: #7F8081;
@@ -270,3 +293,4 @@ cursor: pointer;
   border: 1px solid #464646;
   cursor: pointer;
 }
+
