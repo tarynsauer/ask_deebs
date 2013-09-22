@@ -31,7 +31,10 @@ top: 0;
 left: 0;
 border-bottom: 1px solid rgba(0,0,0,.35);
 z-index: 50;
+}
 
+.header-logo {
+  width:190px;
 }
 
 header nav {
@@ -71,7 +74,6 @@ nav ul a.sign-in {
   color: #fff;
   padding: 5px 20px;
   text-align: center;
-
   background: linear-gradient(to bottom,#ef5344 0%,#e64a3b 100%);
   border: 1px solid #b03b30;
   -moz-border-radius: 3px;
@@ -119,13 +121,10 @@ div #tagCloud {
 }
 
 h1{
-
   font-family: 'Montserrat', sans-serif;
 }
 
 li{
-
-
   font-family: 'Montserrat', sans-serif;
   list-style: none;
 }
@@ -148,4 +147,14 @@ li a{
 
 .vote_down, .vote_up {
   cursor: pointer;
+}
+
+.list_gravatars {
+  width: 20px;
+  height: 20px;
+}
+
+.profile_gravatar {
+  width: 100px;
+  height: 100px;
 }
