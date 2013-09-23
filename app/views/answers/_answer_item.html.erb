@@ -1,6 +1,6 @@
 <li id="answer_<%=answer.id%>" class="<%= cycle("odd", "even") %>">
   <p>
-    <%= answer.content %>
+    <%= answer.content %> 
 
     <% if my_answer?(answer) %>
       <%= link_to 'Edit', [:edit, @question, answer], :class => "editAnswer", :id => "answer_edit_#{answer.id}" %>
@@ -8,6 +8,8 @@
       <%= link_to 'Delete', [@question, answer], :method => :delete, :class => "deleteAnswer", :id => "answer_delete_#{answer.id}", :confirm => 'Are you sure?' %>
       <% end %>
 </p>
+
+<p>by: <%= answer.user.email %></p>
 
   <span class=<%="count-#{answer.id}"%>>LIKES: <%=answer.count_total_likes %></span>
 
