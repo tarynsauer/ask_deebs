@@ -1,6 +1,19 @@
-<h2><%= @question.title %></h2>
-<p><%= @question.content%></p>
-<p><%= @question.created_at %></p>
+<h2 class="questionTitle"><%= @question.title %></h2>
+
+<p class="questionDate"><%= fix_datetime(@question.created_at) %></p>
+
+<div class="followStatus">
+  <% if current_user && (current_user != @question.user) %>
+    <% if is_following?(@question.id) %>
+      <%= link_to "Unfollow this question", question_unfollow_path, options = { :method => :post } %>
+    <% else %>
+      <%= link_to "Follow this question", question_follow_path, options = { :method => :post } %>
+    <% end %>
+  <% end %>
+</div>
+
+
+<p class="questionContent"><%= @question.content%></p>
 <% unless @tags.empty? %>
 <strong>Tags:</strong>
   <ul class="tagsList">
@@ -33,12 +46,4 @@
   <% end %>
 </ul>
 
-<div class=followStatus>
-  <% if current_user && (current_user != @question.user) %>
-    <% if is_following?(@question.id) %>
-      <%= link_to "Unfollow this question", question_unfollow_path, options = { :method => :post } %>
-    <% else %>
-      <%= link_to "Follow this question", question_follow_path, options = { :method => :post } %>
-    <% end %>
-  <% end %>
-</div>
+
