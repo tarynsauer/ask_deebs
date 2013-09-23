@@ -36,11 +36,11 @@ class SessionsController < ApplicationController
   end
 
   def dbc_auth
-    oauth_client.auth_code.authorize_url(redirect_uri: 'http://localhost:3000/auth')
+    oauth_client.auth_code.authorize_url(redirect_uri: 'http://askdeebs.herokuapp.com/auth')
   end
 
   def get_oauth_token(code)
-    oauth_client.auth_code.get_token(code, redirect_uri: 'http://localhost:3000/auth')
+    oauth_client.auth_code.get_token(code, redirect_uri: 'http://askdeebs.herokuapp.com/auth')
   end
 
   def get_user(token)
