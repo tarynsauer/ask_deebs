@@ -108,7 +108,7 @@ ul.question_list, ul.userQuestions, ul.answers {
 }
 
 .question_list li {
-  margin:20px;
+  margin: 20px 0 20px 0;
 }
 
 .question_list a {
