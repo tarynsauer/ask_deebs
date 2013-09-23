@@ -9,7 +9,7 @@
       <% end %>
 </p>
 
-<p>by: <%= answer.user.email %></p>
+<p>by: <%= answer.user.name.split(' ').first %></p>
 
   <span class=<%="count-#{answer.id}"%>>LIKES: <%=answer.count_total_likes %></span>
 
