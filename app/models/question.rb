@@ -25,4 +25,9 @@ class Question < ActiveRecord::Base
     end
   end
 
+  def fix_datetime
+    ar_time = self.created_at.to_s
+    DateTime.parse(ar_time).strftime("%a, %b %e at %l:%M %p")
+  end
+
 end
