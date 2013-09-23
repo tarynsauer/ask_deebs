@@ -278,21 +278,6 @@ border: 1px solid #464646;
 cursor: pointer;
 }
 
-.editAnswer {
-  margin: 5px 0;
-  padding: 5px 5px;
-  padding: 8px 12px 9px !important;
-  font-size: 16px !important;
-  background-color: #2E2E2E;
-  font-weight: bold;
-  color: #ffffff;
-  border-radius: 5px;
-  -moz-border-radius: 5px;
-  -webkit-border-radius: 5px;
-  border: 1px solid #464646;
-  cursor: pointer;
-}
-
 .followStatus a {
   margin: 5px 0;
   padding: 5px 5px;
@@ -312,4 +297,8 @@ cursor: pointer;
 
 .vote_info {
   margin: 5px 0 36px 0;
+}
+
+.even {
+  background-color: #F5F5F5;
 }
