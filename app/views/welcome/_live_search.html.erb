@@ -1,3 +1,9 @@
+<h2><%= @title %></h2>
+
+<% if @count %>
+  <p><%= @count %> results</p>
+<% end %>
+
 <ul class="question_list">
   <li><%= render @questions %></li>
 </ul>

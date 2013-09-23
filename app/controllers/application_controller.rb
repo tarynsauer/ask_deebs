@@ -17,7 +17,7 @@ class ApplicationController < ActionController::Base
   end
 
   def i_like?(answer)
-    vote = Vote.find_by(user_id: @current_user.id, answer_id: answer.id)
+    vote = Vote.find_by(user_id: @current_user.id, answer_id: answer.id) if logged_in?
     unless vote.nil?
       vote.like
     end
